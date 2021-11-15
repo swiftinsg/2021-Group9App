@@ -3,8 +3,8 @@ import SwiftUI
 struct TasksView: View {
     
     @State var showEditSheet = false
-    @State var tasks = [Task(name: "Swift accel", description: "aaaaah we are behind", chapters: 5, completed: 2, date: Date().addingTimeInterval(86400)),
-                        Task(name: "thing", description: "very thing", chapters: 5, completed: 3, date: Date())]
+    @State var tasks = [Task(name: "Swift accel", description: "aaaaah we are behind", chapters: 5, completed: 2, date: Date().addingTimeInterval(86400), progress: 0.25),
+                        Task(name: "Thing", description: "very thing", chapters: 5, completed: 3, date: Date(), progress: 0.25)]
     @State var currentDate = Date()
     @State var showAddSheet = false
     func formatDate(_ date: Date) -> String {
@@ -19,26 +19,26 @@ struct TasksView: View {
         NavigationView{
             List{
                 Section(header: Text("Overdue")){
-                    ForEach(0..<tasks.count){ index in
-                        NavigationLink(destination: TaskDetailView(task: $tasks[index])){
+                    ForEach($tasks){ $task in
+                        NavigationLink(destination: TaskDetailView(task: $task, progress: 0.25)){
                             HStack{
                                 VStack(alignment: .leading){
-                                    Text(tasks[index].name)
+                                    Text(task.name)
                                         .bold()
-                                    Text(formatDate(tasks[index].date))
+                                    Text(formatDate(task.date))
                                 }
                             }
                         }
                     }
                 }
                 Section(header: Text("Due Soon")){
-                    ForEach(0..<tasks.count){ index in
-                        NavigationLink(destination: TaskDetailView(task: $tasks[index])){
+                    ForEach($tasks){ $task in
+                        NavigationLink(destination: TaskDetailView(task: $task, progress: 0.25)){
                             HStack{
                                 VStack(alignment: .leading){
-                                    Text(tasks[index].name)
+                                    Text(task.name)
                                         .bold()
-                                    Text(formatDate(tasks[index].date))
+                                    Text(formatDate(task.date))
                                 }
                                 .navigationTitle("Tasks")
                                 .navigationBarItems(leading: EditButton())
