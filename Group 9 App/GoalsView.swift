@@ -5,26 +5,32 @@ struct GoalsView: View {
     
     var body: some View {
         NavigationView{
-            List(goals){ goal in
-                Button{
-                    let goalIndex = goals.firstIndex(of: goal)!
-                    goals[goalIndex].completed.toggle()
-                    
-                } label: {
-                    HStack{
-                        Text(goal.name)
-                            .bold()
-                            .foregroundColor(.black)
-                        ZStack{
-                            Image(systemName: goal.completed ? "checkmark.square.fill":"square")
-                                .foregroundColor(Color(.systemPink))
-                            
+            List {
+                ForEach(goals){ goal in
+                    Button{
+                        let goalIndex = goals.firstIndex(of: goal)!
+                        goals[goalIndex].completed.toggle()
+                        
+                    } label: {
+                        HStack{
+                            Text(goal.name)
+                                .bold()
+                                .foregroundColor(.black)
+                            ZStack{
+                                Image(systemName: goal.completed ? "checkmark.square.fill":"square")
+                                    .foregroundColor(Color(.systemPink))
+                            }
                         }
                     }
                     
+                }.onDelete { indexSet in
+                    goals.remove(atOffsets: indexSet)
                 }
-                
+                .onMove { indices, newOffset in
+                    goals.move(fromOffsets: indices, toOffset: newOffset)
+                }
             }.navigationTitle("Goals")
+                .navigationBarItems(leading: EditButton())
         }
     }
 }
