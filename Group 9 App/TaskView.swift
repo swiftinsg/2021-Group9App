@@ -47,20 +47,19 @@ struct TasksView: View {
                     }
                 }
             }.listStyle(InsetGroupedListStyle())
-            .navigationTitle("Tasks")
-            .toolbar {
-                Button{
-                    showAddSheet.toggle()
-                }label:{
-                    Text("+")
-                        .bold()
-                        .foregroundColor(Color(.systemPink))
-                    
-                }.sheet(isPresented: $showAddSheet){
-                    AddTaskView()
-                    
+                .navigationTitle("Tasks")
+                .toolbar {
+                    Button{
+                        showAddSheet.toggle()
+                    }label:{
+                        Text("+")
+                            .bold()
+                            .foregroundColor(Color(.systemPink))
+                        
+                    }.sheet(isPresented: $showAddSheet){
+                        AddTaskView(tasks: $tasks)
+                    }
                 }
-            }
         }.accentColor(Color(.systemPink))
     }
 }
