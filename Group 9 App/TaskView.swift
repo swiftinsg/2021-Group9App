@@ -3,11 +3,11 @@ import SwiftUI
 struct TasksView: View {
     
     @State var showEditSheet = false
-    @State var tasks = [Task(name: "Swift accel", description: "aaaaah we are behind", chapters: 5, completed: 2, date: Date()),
+    @State var tasks = [Task(name: "Swift accel", description: "aaaaah we are behind", chapters: 5, completed: 2, date: Date().addingTimeInterval(86400)),
                         Task(name: "thing", description: "very thing", chapters: 5, completed: 3, date: Date())]
     @State var currentDate = Date()
     @State var showAddSheet = false
-    private func formatDate(_ date: Date) -> String {
+    func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()
         // customise how you want to format the date here
         formatter.dateStyle = .medium
