@@ -19,4 +19,7 @@ struct Task: Identifiable, Equatable {
         }
         
     }
+    private func progressCalculator(a: Int, b: Int) -> CGFloat{
+        return CGFloat(a/b)
+    }
 }
