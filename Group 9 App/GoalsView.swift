@@ -6,14 +6,22 @@ struct GoalsView: View {
     var body: some View {
         NavigationView{
             List(goals){ goal in
-                HStack{
-                    Text(goal.name)
-                        .bold()
+                Button{
+                    let goalIndex = goals.firstIndex(of: goal)!
+                    goals[goalIndex].completed.toggle()
+                    
+                } label: {
                     HStack{
-                        Image(systemName: goal.completed ? "checkmark.square.fill":"square")
-                            .foregroundColor(Color(.systemPink))
-                            .frame(alignment: .topTrailing)
+                        Text(goal.name)
+                            .bold()
+                            .foregroundColor(.black)
+                        ZStack{
+                            Image(systemName: goal.completed ? "checkmark.square.fill":"square")
+                                .foregroundColor(Color(.systemPink))
+                            
+                        }
                     }
+                    
                 }
                 
             }.navigationTitle("Goals")
