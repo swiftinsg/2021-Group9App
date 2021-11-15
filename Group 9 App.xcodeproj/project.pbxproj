@@ -47,7 +47,6 @@
 		AA762435273E984900E75145 = {
 			isa = PBXGroup;
 			children = (
-				4676FB042741FFB90014BDC5 /* TaskDetailView.swift */,
 				AA762440273E984900E75145 /* Group 9 App */,
 				AA76243F273E984900E75145 /* Products */,
 			);
@@ -64,6 +63,7 @@
 		AA762440273E984900E75145 /* Group 9 App */ = {
 			isa = PBXGroup;
 			children = (
+				4676FB042741FFB90014BDC5 /* TaskDetailView.swift */,
 				AA762441273E984900E75145 /* Group_9_AppApp.swift */,
 				4676FAFA2741FCFC0014BDC5 /* Task.swift */,
 				4676FAFC2741FD3F0014BDC5 /* Goal.swift */,
