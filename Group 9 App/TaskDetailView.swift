@@ -10,7 +10,6 @@ struct TaskDetailView: View {
         return formatter.string(from: date)
     }
     
-    var progress: CGFloat
     
     var body: some View {
         NavigationView{
@@ -24,20 +23,21 @@ struct TaskDetailView: View {
                         .foregroundColor(.pink)
                     
                     Circle()
-                        .trim(from: 0, to: progress)
+                        .trim(from: 0, to: CGFloat(task.completed)/CGFloat(task.chapters))
                         .stroke(style: .init(lineWidth: 20.0,
                                              lineCap: .round,
                                              lineJoin: .round))
                         .foregroundColor(.pink)
                         .rotationEffect(Angle(degrees: 270))
-                    Text("25%")
+                    Text("\(String((CGFloat(task.completed)/CGFloat(task.chapters)) * 100))%")
                     
                 }
                 .frame(width: 150, height: 150)
                 .position(x: 200, y: 160)
-                Text("3 Out of 5 Topics")
+                Text("\(task.completed) Out of \(task.chapters) Topics")
                     .position(x: 200, y: 280)
-                
+                Text("\(task.description)")
+                    .position(x: 200, y: 350)
             }
             
             .navigationTitle(task.name)
@@ -47,6 +47,6 @@ struct TaskDetailView: View {
 
 struct TaskDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskDetailView(task: .constant(Task(name: "Swift task", description: "Udwyfauywdfauywdfauywdfawudfaudwafwudyafwudfawudhawkudha", chapters: 5, completed: 3, date: Date(), progress: 0.25)), progress: 0.25)
+        TaskDetailView(task: .constant(Task(name: "Swift task", description: "Udwyfauywdfauywdfauywdfawudfaudwafwudyafwudfawudhawkudha", chapters: 5, completed: 3, date: Date())
     }
 }

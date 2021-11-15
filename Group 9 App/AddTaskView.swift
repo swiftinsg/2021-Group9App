@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AddTaskView: View {
-    @State var task = Task(name: "", description: "", chapters: 0, completed: 0, date: Date(), progress: 0.00)
+    @State var task = Task(name: "", description: "", chapters: 0, completed: 0, date: Date())
     @Environment(\.presentationMode) var presentationMode
     @State var totalChapters = ""
     @State var completedChapters = ""

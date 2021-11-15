@@ -3,8 +3,8 @@ import SwiftUI
 struct TasksView: View {
     
     @State var showEditSheet = false
-    @State var tasks = [Task(name: "Swift accel", description: "aaaaah we are behind", chapters: 5, completed: 2, date: Date().addingTimeInterval(86400), progress: 0.25),
-                        Task(name: "Thing", description: "very thing", chapters: 5, completed: 3, date: Date(), progress: 0.25)]
+    @State var tasks = [Task(name: "Swift accel", description: "aaaaah we are behind", chapters: 5, completed: 2, date: Date().addingTimeInterval(86400)),
+                        Task(name: "Thing", description: "very thing", chapters: 5, completed: 3, date: Date())]
     @State var currentDate = Date()
     @State var showAddSheet = false
     func formatDate(_ date: Date) -> String {
@@ -20,7 +20,7 @@ struct TasksView: View {
             List{
                 Section(header: Text("Overdue")){
                     ForEach($tasks){ $task in
-                        NavigationLink(destination: TaskDetailView(task: $task, progress: 0.25)){
+                        NavigationLink(destination: TaskDetailView(task: $task)){
                             HStack{
                                 VStack(alignment: .leading){
                                     Text(task.name)
@@ -33,7 +33,7 @@ struct TasksView: View {
                 }
                 Section(header: Text("Due Soon")){
                     ForEach($tasks){ $task in
-                        NavigationLink(destination: TaskDetailView(task: $task, progress: 0.25)){
+                        NavigationLink(destination: TaskDetailView(task: $task)){
                             HStack{
                                 VStack(alignment: .leading){
                                     Text(task.name)
