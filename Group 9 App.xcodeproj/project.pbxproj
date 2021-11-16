@@ -18,6 +18,7 @@
 		AA762446273E984A00E75145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA762445273E984A00E75145 /* Assets.xcassets */; };
 		AA762449273E984A00E75145 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA762448273E984A00E75145 /* Preview Assets.xcassets */; };
 		C50996E32743556900654F92 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50996E22743556900654F92 /* EditTaskView.swift */; };
+		C50996E527436B2300654F92 /* AddGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50996E427436B2300654F92 /* AddGoalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		AA762445273E984A00E75145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA762448273E984A00E75145 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C50996E22743556900654F92 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
+		C50996E427436B2300654F92 /* AddGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				4676FAFE2741FE870014BDC5 /* TaskView.swift */,
 				4676FB002741FF1B0014BDC5 /* AddTaskView.swift */,
 				4676FB022741FF4C0014BDC5 /* GoalsView.swift */,
+				C50996E427436B2300654F92 /* AddGoalView.swift */,
 				AA762445273E984A00E75145 /* Assets.xcassets */,
 				AA762447273E984A00E75145 /* Preview Content */,
 			);
@@ -161,6 +164,7 @@
 				C50996E32743556900654F92 /* EditTaskView.swift in Sources */,
 				4676FB052741FFB90014BDC5 /* TaskDetailView.swift in Sources */,
 				4676FAFD2741FD3F0014BDC5 /* Goal.swift in Sources */,
+				C50996E527436B2300654F92 /* AddGoalView.swift in Sources */,
 				AA762444273E984900E75145 /* ContentView.swift in Sources */,
 				4676FAFB2741FCFC0014BDC5 /* Task.swift in Sources */,
 				4676FB012741FF1B0014BDC5 /* AddTaskView.swift in Sources */,

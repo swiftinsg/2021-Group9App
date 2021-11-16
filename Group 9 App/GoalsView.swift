@@ -2,7 +2,7 @@ import SwiftUI
 
 struct GoalsView: View {
     @State var goals = [Goal(name: "feed the cat", completed: false), Goal(name: "Feed dog", completed: true)]
-    
+    @State var showAddSheet = false
     var body: some View {
         NavigationView{
             List {
@@ -32,7 +32,19 @@ struct GoalsView: View {
                 }
             }.navigationTitle("Goals")
                 .navigationBarItems(leading: EditButton())
-        }
+                .toolbar{
+                    Button{
+                        showAddSheet = true
+                    }label:{
+                        Text("+")
+                            .foregroundColor(Color(.systemPink))
+                            .bold()
+                    }
+                }
+                .sheet(isPresented: $showAddSheet){
+                    AddGoalView(goals: $goals)
+                }
+        }.accentColor(Color(.systemPink))
     }
 }
 
