@@ -29,6 +29,11 @@ struct TasksView: View {
                                 }
                             }
                         }
+                    }.onDelete { offsets in
+                        tasks.remove(atOffsets: offsets)
+                    }
+                    .onMove { source, destination in
+                        tasks.move(fromOffsets: source, toOffset: destination)
                     }
                 }
                 Section(header: Text("Due Soon")){
@@ -44,6 +49,11 @@ struct TasksView: View {
                                 .navigationBarItems(leading: EditButton())
                             }
                         }
+                    }.onDelete { offsets in
+                        tasks.remove(atOffsets: offsets)
+                    }
+                    .onMove { source, destination in
+                        tasks.move(fromOffsets: source, toOffset: destination)
                     }
                 }
             }.listStyle(InsetGroupedListStyle())
