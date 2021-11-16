@@ -17,13 +17,17 @@ struct TasksView: View {
     
     var body: some View {
         let overdueTasks = tasks.filter {
-            Calendar.current.compare(Date.now, to: $0.deadline, toGranularity: .day)
+            Calendar.current.compare(Date.now, to: $0.date, toGranularity: .day) == .orderedDescending
+        }
+        let dueSoonTasks = tasks.filter {
+            Calendar.current.compare(Date.now, to: $0.date, toGranularity: .day) != .orderedDescending
         }
         NavigationView{
             List{
                 Section(header: Text("Overdue")){
-                    ForEach($tasks){ $task in
-                        NavigationLink(destination: TaskDetailView(task: $task)){
+                    ForEach(overdueTasks){ task in
+                        let taskIndex = tasks.firstIndex(of: task)!
+                        NavigationLink(destination: TaskDetailView(task: $tasks[taskIndex])){
                             HStack{
                                 VStack(alignment: .leading){
                                     Text(task.name)
@@ -40,8 +44,9 @@ struct TasksView: View {
                     }
                 }
                 Section(header: Text("Due Soon")){
-                    ForEach($tasks){ $task in
-                        NavigationLink(destination: TaskDetailView(task: $task)){
+                    ForEach(dueSoonTasks){ task in
+                        let taskIndex = tasks.firstIndex(of: task)!
+                        NavigationLink(destination: TaskDetailView(task: $tasks[taskIndex])){
                             HStack{
                                 VStack(alignment: .leading){
                                     Text(task.name)
