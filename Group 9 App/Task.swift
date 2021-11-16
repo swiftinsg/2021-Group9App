@@ -9,6 +9,7 @@ struct Task: Identifiable, Equatable {
     var chapters: Int
     var completed: Int
     var date: Date
+    var deadline: Date
     
     private func isOverdue(date: Date) -> Bool {
         if date > Date() {

@@ -3,8 +3,8 @@ import SwiftUI
 struct TasksView: View {
     
     @State var showEditSheet = false
-    @State var tasks = [Task(name: "Swift accel", description: "aaaaah we are behind", chapters: 5, completed: 2, date: Date().addingTimeInterval(86400)),
-                        Task(name: "Thing", description: "very thing", chapters: 5, completed: 3, date: Date())]
+    @State var tasks = [Task(name: "Swift accel", description: "aaaaah we are behind", chapters: 5, completed: 2, date: Date().addingTimeInterval(86400), deadline: Date().addingTimeInterval(86400)),
+                        Task(name: "Thing", description: "very thing", chapters: 5, completed: 3, date: Date(), deadline: Date())]
     @State var currentDate = Date()
     @State var showAddSheet = false
     func formatDate(_ date: Date) -> String {
@@ -61,6 +61,9 @@ struct TasksView: View {
                     }
                 }
         }.accentColor(Color(.systemPink))
+        let overdueTasks = tasks.filter {
+            Calendar.current.compare(Date.now, to: $0.deadline, toGranularity: .day) == .orderedDescending
+        }
     }
 }
 
