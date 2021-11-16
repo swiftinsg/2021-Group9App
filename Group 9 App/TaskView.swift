@@ -16,6 +16,9 @@ struct TasksView: View {
     
     
     var body: some View {
+        let overdueTasks = tasks.filter {
+            Calendar.current.compare(Date.now, to: $0.deadline, toGranularity: .day)
+        }
         NavigationView{
             List{
                 Section(header: Text("Overdue")){
