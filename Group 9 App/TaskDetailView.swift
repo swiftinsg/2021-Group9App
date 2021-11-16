@@ -49,6 +49,9 @@ struct TaskDetailView: View {
                 }
             }
         }.accentColor(Color(.systemPink))
+            .sheet(isPresented: $showEditSheet){
+                EditTaskView(task: $task)
+            }
     }
 }
 
