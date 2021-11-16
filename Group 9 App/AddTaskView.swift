@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AddTaskView: View {
-    @State var task = Task(name: "", description: "", chapters: 0, completed: 0, date: Date(), deadline: Date())
+    @State var task = Task(name: "", description: "", chapters: 0, completed: 0, date: Date())
     @Environment(\.presentationMode) var presentationMode
     @Binding var tasks: [Task]
     @State var name = ""
@@ -9,7 +9,6 @@ struct AddTaskView: View {
     @State var description = ""
     @State var completed = ""
     @State var chapters = ""
-    @State var deadline = Date()
     @State var showAlert = false
     var body: some View {
         NavigationView{
@@ -31,7 +30,7 @@ struct AddTaskView: View {
                 Section{
                     Button("Save"){
                         if Int(completed)! <= Int(chapters)!{
-                            tasks.append(Task(name: name, description: description, chapters: Int(chapters)!, completed: Int(chapters)!, date: date, deadline: deadline))
+                            tasks.append(Task(name: name, description: description, chapters: Int(chapters)!, completed: Int(chapters)!, date: date))
                         presentationMode.wrappedValue.dismiss()
                         }else{
                             showAlert = true

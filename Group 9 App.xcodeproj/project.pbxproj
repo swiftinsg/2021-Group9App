@@ -17,6 +17,7 @@
 		AA762444273E984900E75145 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA762443273E984900E75145 /* ContentView.swift */; };
 		AA762446273E984A00E75145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA762445273E984A00E75145 /* Assets.xcassets */; };
 		AA762449273E984A00E75145 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA762448273E984A00E75145 /* Preview Assets.xcassets */; };
+		C50996E32743556900654F92 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50996E22743556900654F92 /* EditTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		AA762443273E984900E75145 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA762445273E984A00E75145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA762448273E984A00E75145 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C50996E22743556900654F92 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				4676FB042741FFB90014BDC5 /* TaskDetailView.swift */,
+				C50996E22743556900654F92 /* EditTaskView.swift */,
 				AA762441273E984900E75145 /* Group_9_AppApp.swift */,
 				4676FAFA2741FCFC0014BDC5 /* Task.swift */,
 				4676FAFC2741FD3F0014BDC5 /* Goal.swift */,
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C50996E32743556900654F92 /* EditTaskView.swift in Sources */,
 				4676FB052741FFB90014BDC5 /* TaskDetailView.swift in Sources */,
 				4676FAFD2741FD3F0014BDC5 /* Goal.swift in Sources */,
 				AA762444273E984900E75145 /* ContentView.swift in Sources */,

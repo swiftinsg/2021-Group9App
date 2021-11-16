@@ -9,7 +9,7 @@ struct TaskDetailView: View {
         formatter.dateStyle = .medium
         return formatter.string(from: date)
     }
-    
+    @State var showEditSheet = false
     
     var body: some View {
         NavigationView{
@@ -41,7 +41,14 @@ struct TaskDetailView: View {
             }
             
             .navigationTitle(task.name)
-        }
+            .toolbar{
+                Button{
+                    showEditSheet = true
+                }label:{
+                    Text("Edit")
+                }
+            }
+        }.accentColor(Color(.systemPink))
     }
 }
 
