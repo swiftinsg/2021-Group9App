@@ -16,6 +16,7 @@ struct GoalsView: View {
                             Text(goal.name)
                                 .bold()
                                 .foregroundColor(.black)
+                            Spacer()
                             ZStack{
                                 Image(systemName: goal.completed ? "checkmark.square.fill":"square")
                                     .foregroundColor(Color(.systemPink))

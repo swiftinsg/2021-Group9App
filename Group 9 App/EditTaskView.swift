@@ -15,6 +15,7 @@ struct EditTaskView: View {
     @State var date = Date()
     @State var completedChapters = ""
     @State var description = ""
+    @State var newTask = Task(name: "", description: "", chapters: 0, completed: 0, date: Date())
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView{
@@ -38,6 +39,7 @@ struct EditTaskView: View {
                     Button{
                         if Int(completedChapters)! <= Int(totalChapters)!{
                             task = Task(name: name, description: description, chapters: Int(totalChapters)!, completed: Int(completedChapters)!, date: date)
+                            presentationMode.wrappedValue.dismiss()
                         }else{
                             showErrorAlert = true
                         }
@@ -52,13 +54,14 @@ struct EditTaskView: View {
                     }
                 }
             }.navigationTitle(Text("Edit Task"))
-                .onAppear(){
-                    totalChapters = String(task.chapters)
-                    completedChapters = String(task.completed)
-                    date = task.date
-                    description = task.description
-                    
-                }
+        }.onAppear(){
+            newTask = task
+            name = task.name
+            totalChapters = String(task.chapters)
+            completedChapters = String(task.completed)
+            date = task.date
+            description = task.description
+            
         }
     }
 }
