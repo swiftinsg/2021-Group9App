@@ -8,15 +8,58 @@
 import SwiftUI
 
 struct EditTaskView: View {
-    
+    @State var showErrorAlert = false
     @Binding var task: Task
+    @State var totalChapters = ""
+    @State var name = ""
+    @State var date = Date()
+    @State var completedChapters = ""
+    @State var description = ""
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
-        Form{
-            Section(header: Text("Task info")){
-                
-            }
+        NavigationView{
+            Form{
+                Section(header: Text("Task info")){
+                    TextField("Name", text: $name)
+                    TextField("Description", text: $description)
+                    
+                }
+                Section(header: Text("Total chapters")){
+                    TextField("Total chapters",text: $totalChapters)
+                    
+                }
+                Section(header: Text("Completed Chapters")){
+                    TextField("Completed chapters", text: $completedChapters)
+                }
+                Section(header: Text("Deadline")){
+                    DatePicker("When is this due?", selection: $date, displayedComponents: [.date])
+                }
+                Section{
+                    Button{
+                        if Int(completedChapters)! <= Int(totalChapters)!{
+                            task = Task(name: name, description: description, chapters: Int(totalChapters)!, completed: Int(completedChapters)!, date: date)
+                        }else{
+                            showErrorAlert = true
+                        }
+                    }label:{
+                        Text("Save")
+                    }
+                    Button{
+                        presentationMode.wrappedValue.dismiss()
+                    }label:{
+                        Text("Discard")
+                            .foregroundColor(.red)
+                    }
+                }
+            }.navigationTitle(Text("Edit Task"))
+                .onAppear(){
+                    totalChapters = String(task.chapters)
+                    completedChapters = String(task.completed)
+                    date = task.date
+                    description = task.description
+                    
+                }
         }
-
     }
 }
 

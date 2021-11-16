@@ -49,11 +49,14 @@ struct TaskDetailView: View {
                 }
             }
         }.accentColor(Color(.systemPink))
+            .sheet(isPresented: $showEditSheet){
+                EditTaskView(task: $task)
+            }
     }
 }
 
 struct TaskDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskDetailView(task: .constant(Task(name: "Swift task", description: "Udwyfauywdfauywdfauywdfawudfaudwafwudyafwudfawudhawkudha", chapters: 5, completed: 3, date: Date(), deadline: Date())))
+        TaskDetailView(task: .constant(Task(name: "Swift task", description: "Udwyfauywdfauywdfauywdfawudfaudwafwudyafwudfawudhawkudha", chapters: 5, completed: 3, date: Date())))
     }
 }
