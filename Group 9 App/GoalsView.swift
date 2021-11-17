@@ -27,6 +27,9 @@ struct GoalsView: View {
                 }.onDelete { indexSet in
                     goals.remove(atOffsets: indexSet)
                 }
+                .onMove { indices, newOffset in
+                    goals.move(fromOffsets: indices, toOffset: newOffset)
+                }
             }.navigationTitle("Goals")
                 .navigationBarItems(leading: EditButton())
                 .toolbar{

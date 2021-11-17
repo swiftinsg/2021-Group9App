@@ -16,44 +16,48 @@ struct EditTaskView: View {
     @State var completedChapters = ""
     @State var description = ""
     @State var newTask = Task(name: "", description: "", chapters: 0, completed: 0, date: Date())
+    @State var loadContent = false
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView{
-            Form{
-                Section(header: Text("Task info")){
-                    TextField("Name", text: $name)
-                    TextField("Description", text: $description)
-                    
-                }
-                Section(header: Text("Total chapters")){
-                    TextField("Total chapters",text: $totalChapters)
-                    
-                }
-                Section(header: Text("Completed Chapters")){
-                    TextField("Completed chapters", text: $completedChapters)
-                }
-                Section(header: Text("Deadline")){
-                    DatePicker("When is this due?", selection: $date, displayedComponents: [.date])
-                }
-                Section{
-                    Button{
-                        if Int(completedChapters)! <= Int(totalChapters)!{
-                            task = Task(name: name, description: description, chapters: Int(totalChapters)!, completed: Int(completedChapters)!, date: date)
-                            presentationMode.wrappedValue.dismiss()
-                        }else{
-                            showErrorAlert = true
+            if loadContent{
+                Form{
+                    Section(header: Text("Task info")){
+                        TextField("Name", text: $name)
+                        TextField("Description", text: $description)
+                        
+                    }
+                    Section(header: Text("Total chapters")){
+                        TextField("Total chapters",text: $totalChapters)
+                            .keyboardType(.numberPad)
+                    }
+                    Section(header: Text("Completed Chapters")){
+                        TextField("Completed chapters", text: $completedChapters)
+                            .keyboardType(.numberPad)
+                    }
+                    Section(header: Text("Deadline")){
+                        DatePicker("When is this due?", selection: $date, displayedComponents: [.date])
+                    }
+                    Section{
+                        Button{
+                            if Int(completedChapters)! <= Int(totalChapters)!{
+                                task = Task(name: name, description: description, chapters: Int(totalChapters)!, completed: Int(completedChapters)!, date: date)
+                                presentationMode.wrappedValue.dismiss()
+                            }else{
+                                showErrorAlert = true
+                            }
+                        }label:{
+                            Text("Save")
                         }
-                    }label:{
-                        Text("Save")
+                        Button{
+                            presentationMode.wrappedValue.dismiss()
+                        }label:{
+                            Text("Discard")
+                                .foregroundColor(.red)
+                        }
                     }
-                    Button{
-                        presentationMode.wrappedValue.dismiss()
-                    }label:{
-                        Text("Discard")
-                            .foregroundColor(.red)
-                    }
-                }
-            }.navigationTitle(Text("Edit Task"))
+                }.navigationTitle(Text("Edit Task"))
+            }
         }.onAppear(){
             newTask = task
             name = task.name
@@ -61,6 +65,7 @@ struct EditTaskView: View {
             completedChapters = String(task.completed)
             date = task.date
             description = task.description
+            loadContent = true
             
         }
     }
