@@ -16,10 +16,10 @@ struct TasksView: View {
     
     
     var body: some View {
-        let overdueTasks = tasks.filter {
+        var overdueTasks = tasks.filter {
             Calendar.current.compare(Date.now, to: $0.date, toGranularity: .day) == .orderedDescending
         }
-        let dueSoonTasks = tasks.filter {
+        var dueSoonTasks = tasks.filter {
             Calendar.current.compare(Date.now, to: $0.date, toGranularity: .day) != .orderedDescending
         }
         NavigationView{
@@ -37,6 +37,11 @@ struct TasksView: View {
                                     }
                                 }
                             }
+                        }.onDelete { indexSet in
+                            overdueTasks.remove(atOffsets: indexSet)
+                        }
+                        .onMove { indices, newOffset in
+                            overdueTasks.move(fromOffsets: indices, toOffset: newOffset)
                         }
                     }else{
                         Text("Good work! you have nothing Overdue!")
@@ -54,9 +59,12 @@ struct TasksView: View {
                                         Text(formatDate(task.date))
                                     }
                                 }
-                                .navigationTitle("Tasks")
-                                .navigationBarItems(leading: EditButton())
                             }
+                        }.onDelete { indexSet in
+                            dueSoonTasks.remove(atOffsets: indexSet)
+                        }
+                        .onMove { indices, newOffset in
+                            dueSoonTasks.move(fromOffsets: indices, toOffset: newOffset)
                         }
                     }else{
                         Text("Get started by adding some tasks!")
@@ -64,6 +72,7 @@ struct TasksView: View {
                 }
             }.listStyle(InsetGroupedListStyle())
                 .navigationTitle("Tasks")
+                .navigationBarItems(leading: EditButton())
                 .toolbar {
                     Button{
                         showAddSheet.toggle()
