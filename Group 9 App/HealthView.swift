@@ -10,17 +10,23 @@ struct HealthView: View {
     var body: some View {
         NavigationView{
             List{
-                Button("Health Form"){
+                Button{
                     showFormSheet = true
+                }label:{
+                    Text("Health Form")
+                        .foregroundColor(Color(.systemPink))
                 }
-                Button("Quote of the Day"){
+                Button{
                     showQuoteSheet = true
+                }label:{
+                    Text("Motivational Quote!")
+                        .foregroundColor(Color(.systemPink))
                 }
-                Button("Advice of the Day"){
-                    
-                }
-                Button("Study Tips"){
-                    
+                Button{
+                    showTipsSheet = true
+                }label:{
+                   Text("Study Tips")
+                        .foregroundColor(Color(.systemPink))
                 }
                 LineChart()
                     .data(stressData)
