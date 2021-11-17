@@ -1,6 +1,8 @@
 import SwiftUI
+import SwiftUICharts
 
 struct HealthView: View {
+    var stressData: [Double] = [8, 2, 4, 6, 12, 9, 2]
     @State var showAddSheet = false
     var body: some View {
         NavigationView{
@@ -14,7 +16,10 @@ struct HealthView: View {
                 Button("Advice of the Day"){
                     
                 }
-                //inserts chart here
+                LineChart()
+                    .data(stressData)
+                    .chartStyle(ChartStyle(backgroundColor: .white,
+                                           foregroundColor: Color.pink))
                 Text("Overview of the Week")
             }.navigationTitle("Health")
         }
