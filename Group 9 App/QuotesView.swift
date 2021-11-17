@@ -20,6 +20,15 @@ struct QuotesView: View {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
             }
+            Button{
+                quoteManager.getQuote()
+            }label:{
+                Text("New Quote!")
+                    .foregroundColor(.white)
+                
+            }.padding()
+                .background(Color.pink)
+                .cornerRadius(10.0)
         }.onAppear(){
             quoteManager.getQuote()
         }
