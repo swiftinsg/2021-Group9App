@@ -5,7 +5,6 @@ struct HealthView: View {
     var stressData: [Double] = [8, 2, 4, 6, 12, 9, 2]
     @State var showFormSheet = false
     @State var showQuoteSheet = false
-    @State var showAdviceSheet = false
     @State var showTipsSheet = false
     var body: some View {
         NavigationView{
