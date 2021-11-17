@@ -63,7 +63,7 @@ struct TasksView: View {
                             tasks.remove(atOffsets: indexSet)
                         }
                     }else{
-                        Text("Get started by adding some tasks!")
+                        Text("Welcome! Get started by adding some tasks!")
                     }
                 }
             }.listStyle(InsetGroupedListStyle())
