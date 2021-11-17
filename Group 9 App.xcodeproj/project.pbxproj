@@ -14,6 +14,7 @@
 		4676FB032741FF4C0014BDC5 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4676FB022741FF4C0014BDC5 /* GoalsView.swift */; };
 		4676FB052741FFB90014BDC5 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4676FB042741FFB90014BDC5 /* TaskDetailView.swift */; };
 		AA2C5FF02744C4A5005D5A19 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = AA2C5FEF2744C4A5005D5A19 /* SwiftUICharts */; };
+		AA2C5FF22744D833005D5A19 /* HealthFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2C5FF12744D833005D5A19 /* HealthFormView.swift */; };
 		AA3358BD2744998D00F66BC8 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3358BC2744998D00F66BC8 /* Health.swift */; };
 		AA3358BF274499A100F66BC8 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3358BE274499A100F66BC8 /* HealthView.swift */; };
 		AA762442273E984900E75145 /* Group_9_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA762441273E984900E75145 /* Group_9_AppApp.swift */; };
@@ -34,6 +35,7 @@
 		4676FB002741FF1B0014BDC5 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		4676FB022741FF4C0014BDC5 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
 		4676FB042741FFB90014BDC5 /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
+		AA2C5FF12744D833005D5A19 /* HealthFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthFormView.swift; sourceTree = "<group>"; };
 		AA3358BC2744998D00F66BC8 /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
 		AA3358BE274499A100F66BC8 /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
 		AA76243E273E984900E75145 /* Group 9 App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Group 9 App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,21 +81,22 @@
 		AA762440273E984900E75145 /* Group 9 App */ = {
 			isa = PBXGroup;
 			children = (
-				4676FB042741FFB90014BDC5 /* TaskDetailView.swift */,
-				C50996E22743556900654F92 /* EditTaskView.swift */,
 				AA762441273E984900E75145 /* Group_9_AppApp.swift */,
-				4676FAFA2741FCFC0014BDC5 /* Task.swift */,
-				4676FAFC2741FD3F0014BDC5 /* Goal.swift */,
 				AA762443273E984900E75145 /* ContentView.swift */,
+				4676FAFA2741FCFC0014BDC5 /* Task.swift */,
+				4676FAFE2741FE870014BDC5 /* TaskView.swift */,
+				4676FB042741FFB90014BDC5 /* TaskDetailView.swift */,
+				4676FB002741FF1B0014BDC5 /* AddTaskView.swift */,
+				C50996E22743556900654F92 /* EditTaskView.swift */,
+				4676FAFC2741FD3F0014BDC5 /* Goal.swift */,
+				4676FB022741FF4C0014BDC5 /* GoalsView.swift */,
+				C50996E427436B2300654F92 /* AddGoalView.swift */,
 				AA3358BC2744998D00F66BC8 /* Health.swift */,
 				AA3358BE274499A100F66BC8 /* HealthView.swift */,
-				4676FAFE2741FE870014BDC5 /* TaskView.swift */,
-				4676FB002741FF1B0014BDC5 /* AddTaskView.swift */,
-				4676FB022741FF4C0014BDC5 /* GoalsView.swift */,
-				C5F856662744AB04003F9F36 /* QuoteManager.swift */,
-				C5F8566A2744AD2B003F9F36 /* QuotesView.swift */,
+				AA2C5FF12744D833005D5A19 /* HealthFormView.swift */,
 				C5F856682744AC61003F9F36 /* Quote.swift */,
-				C50996E427436B2300654F92 /* AddGoalView.swift */,
+				C5F8566A2744AD2B003F9F36 /* QuotesView.swift */,
+				C5F856662744AB04003F9F36 /* QuoteManager.swift */,
 				AA762445273E984A00E75145 /* Assets.xcassets */,
 				AA762447273E984A00E75145 /* Preview Content */,
 			);
@@ -188,6 +191,7 @@
 				AA3358BF274499A100F66BC8 /* HealthView.swift in Sources */,
 				AA3358BD2744998D00F66BC8 /* Health.swift in Sources */,
 				C50996E32743556900654F92 /* EditTaskView.swift in Sources */,
+				AA2C5FF22744D833005D5A19 /* HealthFormView.swift in Sources */,
 				4676FB052741FFB90014BDC5 /* TaskDetailView.swift in Sources */,
 				4676FAFD2741FD3F0014BDC5 /* Goal.swift in Sources */,
 				C50996E527436B2300654F92 /* AddGoalView.swift in Sources */,
