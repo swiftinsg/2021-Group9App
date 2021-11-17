@@ -4,7 +4,7 @@ struct TasksView: View {
     
     @State var showEditSheet = false
     @State var tasks = [Task(name: "Swift accel", description: "aaaaah we are behind", chapters: 5, completed: 2, date: Date().addingTimeInterval(86400)),
-            Task(name: "Thing", description: "very thing", chapters: 5, completed: 3, date: Date())]
+                        Task(name: "Thing", description: "very thing", chapters: 5, completed: 3, date: Date())]
     @State var currentDate = Date()
     @State var showAddSheet = false
     func formatDate(_ date: Date) -> String {
@@ -25,43 +25,41 @@ struct TasksView: View {
         NavigationView{
             List{
                 Section(header: Text("Overdue")){
-                    ForEach(overdueTasks){ task in
-                        let taskIndex = tasks.firstIndex(of: task)!
-                        NavigationLink(destination: TaskDetailView(task: $tasks[taskIndex])){
-                            HStack{
-                                VStack(alignment: .leading){
-                                    Text(task.name)
-                                        .bold()
-                                    Text(formatDate(task.date))
+                    if overdueTasks.count != 0{
+                        ForEach(overdueTasks){ task in
+                            let taskIndex = tasks.firstIndex(of: task)!
+                            NavigationLink(destination: TaskDetailView(task: $tasks[taskIndex])){
+                                HStack{
+                                    VStack(alignment: .leading){
+                                        Text(task.name)
+                                            .bold()
+                                        Text(formatDate(task.date))
+                                    }
                                 }
                             }
                         }
-                    }.onDelete { offsets in
-                        tasks.remove(atOffsets: offsets)
-                    }
-                    .onMove { source, destination in
-                        tasks.move(fromOffsets: source, toOffset: destination)
+                    }else{
+                        Text("Good work! you have nothing Overdue!")
                     }
                 }
                 Section(header: Text("Due Soon")){
-                    ForEach(dueSoonTasks){ task in
-                        let taskIndex = tasks.firstIndex(of: task)!
-                        NavigationLink(destination: TaskDetailView(task: $tasks[taskIndex])){
-                            HStack{
-                                VStack(alignment: .leading){
-                                    Text(task.name)
-                                        .bold()
-                                    Text(formatDate(task.date))
+                    if dueSoonTasks.count != 0{
+                        ForEach(dueSoonTasks){ task in
+                            let taskIndex = tasks.firstIndex(of: task)!
+                            NavigationLink(destination: TaskDetailView(task: $tasks[taskIndex])){
+                                HStack{
+                                    VStack(alignment: .leading){
+                                        Text(task.name)
+                                            .bold()
+                                        Text(formatDate(task.date))
+                                    }
                                 }
                                 .navigationTitle("Tasks")
                                 .navigationBarItems(leading: EditButton())
                             }
                         }
-                    }.onDelete { offsets in
-                        tasks.remove(atOffsets: offsets)
-                    }
-                    .onMove { source, destination in
-                        tasks.move(fromOffsets: source, toOffset: destination)
+                    }else{
+                        Text("Get started by adding some tasks!")
                     }
                 }
             }.listStyle(InsetGroupedListStyle())
@@ -79,9 +77,6 @@ struct TasksView: View {
                     }
                 }
         }.accentColor(Color(.systemPink))
-        let overdueTasks = tasks.filter {
-            Calendar.current.compare(Date.now, to: $0.date, toGranularity: .day) == .orderedDescending
-        }
     }
 }
 
