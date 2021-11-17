@@ -40,7 +40,7 @@ struct AddTaskView: View {
                         presentationMode.wrappedValue.dismiss()
                     }.foregroundColor(.red)
                 }
-            }.navigationTitle("Add Task")
+            }.navigationTitle("New Task")
                 .alert(isPresented: $showAlert){
                     Alert(title: Text("Error"),
                           message: Text("Invalid input! Please check again."),
