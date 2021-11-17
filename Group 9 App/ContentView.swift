@@ -14,6 +14,12 @@ struct ContentView: View {
                     Text("Goals")
                     
                 }
+            HealthView()
+                .tabItem {
+                    Image(systemName: "heart.circle")
+                    Text("Health")
+                    
+                }
         }
     }
 }

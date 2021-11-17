@@ -13,6 +13,8 @@
 		4676FB012741FF1B0014BDC5 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4676FB002741FF1B0014BDC5 /* AddTaskView.swift */; };
 		4676FB032741FF4C0014BDC5 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4676FB022741FF4C0014BDC5 /* GoalsView.swift */; };
 		4676FB052741FFB90014BDC5 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4676FB042741FFB90014BDC5 /* TaskDetailView.swift */; };
+		AA3358BD2744998D00F66BC8 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3358BC2744998D00F66BC8 /* Health.swift */; };
+		AA3358BF274499A100F66BC8 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3358BE274499A100F66BC8 /* HealthView.swift */; };
 		AA762442273E984900E75145 /* Group_9_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA762441273E984900E75145 /* Group_9_AppApp.swift */; };
 		AA762444273E984900E75145 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA762443273E984900E75145 /* ContentView.swift */; };
 		AA762446273E984A00E75145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA762445273E984A00E75145 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		4676FB002741FF1B0014BDC5 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		4676FB022741FF4C0014BDC5 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
 		4676FB042741FFB90014BDC5 /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
+		AA3358BC2744998D00F66BC8 /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
+		AA3358BE274499A100F66BC8 /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
 		AA76243E273E984900E75145 /* Group 9 App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Group 9 App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA762441273E984900E75145 /* Group_9_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group_9_AppApp.swift; sourceTree = "<group>"; };
 		AA762443273E984900E75145 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 				4676FAFA2741FCFC0014BDC5 /* Task.swift */,
 				4676FAFC2741FD3F0014BDC5 /* Goal.swift */,
 				AA762443273E984900E75145 /* ContentView.swift */,
+				AA3358BC2744998D00F66BC8 /* Health.swift */,
+				AA3358BE274499A100F66BC8 /* HealthView.swift */,
 				4676FAFE2741FE870014BDC5 /* TaskView.swift */,
 				4676FB002741FF1B0014BDC5 /* AddTaskView.swift */,
 				4676FB022741FF4C0014BDC5 /* GoalsView.swift */,
@@ -161,6 +167,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3358BF274499A100F66BC8 /* HealthView.swift in Sources */,
+				AA3358BD2744998D00F66BC8 /* Health.swift in Sources */,
 				C50996E32743556900654F92 /* EditTaskView.swift in Sources */,
 				4676FB052741FFB90014BDC5 /* TaskDetailView.swift in Sources */,
 				4676FAFD2741FD3F0014BDC5 /* Goal.swift in Sources */,
