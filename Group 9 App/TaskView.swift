@@ -39,9 +39,7 @@ struct TasksView: View {
                             }
                         }.onDelete { indexSet in
                             overdueTasks.remove(atOffsets: indexSet)
-                        }
-                        .onMove { indices, newOffset in
-                            overdueTasks.move(fromOffsets: indices, toOffset: newOffset)
+                            tasks.remove(atOffsets: indexSet)
                         }
                     }else{
                         Text("Good work! you have nothing Overdue!")
@@ -62,9 +60,7 @@ struct TasksView: View {
                             }
                         }.onDelete { indexSet in
                             dueSoonTasks.remove(atOffsets: indexSet)
-                        }
-                        .onMove { indices, newOffset in
-                            dueSoonTasks.move(fromOffsets: indices, toOffset: newOffset)
+                            tasks.remove(atOffsets: indexSet)
                         }
                     }else{
                         Text("Get started by adding some tasks!")
