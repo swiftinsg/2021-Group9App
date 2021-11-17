@@ -29,7 +29,8 @@ struct TaskDetailView: View {
                                              lineJoin: .round))
                         .foregroundColor(.pink)
                         .rotationEffect(Angle(degrees: 270))
-                    Text("\(String((CGFloat(task.completed)/CGFloat(task.chapters)) * 100))%")
+                    let percentage = CGFloat(task.completed)/CGFloat(task.chapters)
+                    Text("\(Double(percentage*100), specifier: "%.2f")%")
                     
                 }
                 .frame(width: 150, height: 150)
