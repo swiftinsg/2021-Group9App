@@ -18,11 +18,13 @@ class QuoteManager: ObservableObject{
         
         quote = nil
         
+        
         URLSession.shared.dataTask(with: request){ data, response, error in
             if let data = data {
                 let decoder = JSONDecoder()
                 DispatchQueue.main.async {
-                    self.quote = try? decoder.decode(Quote.self, from: data)
+                    let quotes = try? decoder.decode([Quote].self, from: data)
+                    self.quote = quotes?.randomElement()
                 }
             }
         }.resume()

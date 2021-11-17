@@ -7,6 +7,6 @@
 
 import Foundation
 struct Quote: Decodable {
-    var fact: String
-    var length: Int
+    var text: String
+    var author: String
 }

@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct QuotesView: View {
+    
+    @ObservedObject var quoteManager = QuoteManager()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            if let quote = quoteManager.quote{
+                Text(quote.text)
+                    .padding()
+            }else{
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+            }
+        }.onAppear(){
+            quoteManager.getQuote()
+        }
     }
 }
 
