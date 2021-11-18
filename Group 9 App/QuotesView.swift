@@ -19,6 +19,7 @@ struct QuotesView: View {
             }else{
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
+                    .padding()
             }
             Button{
                 quoteManager.getQuote()

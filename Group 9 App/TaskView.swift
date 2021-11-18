@@ -3,8 +3,7 @@ import SwiftUI
 struct TasksView: View {
     
     @State var showEditSheet = false
-    @State var tasks = [Task(name: "Swift accel", description: "aaaaah we are behind", chapters: 5, completed: 2, date: Date().addingTimeInterval(86400)),
-                        Task(name: "Thing", description: "very thing", chapters: 5, completed: 3, date: Date())]
+    @Binding var tasks: [Task]
     @State var currentDate = Date()
     @State var showAddSheet = false
     func formatDate(_ date: Date) -> String {
@@ -87,6 +86,6 @@ struct TasksView: View {
 
 struct TasksView_Previews: PreviewProvider {
     static var previews: some View {
-        TasksView()
+        TasksView(tasks: .constant([]))
     }
 }

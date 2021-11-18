@@ -1,9 +1,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Binding var tasks: [Task]
+    
     var body: some View {
         TabView{
-            TasksView()
+            TasksView(tasks: $tasks)
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Tasks")
@@ -26,6 +29,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(tasks: .constant([]))
     }
 }
