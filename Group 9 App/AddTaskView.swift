@@ -29,9 +29,13 @@ struct AddTaskView: View {
                 }
                 Section{
                     Button("Save"){
-                        if Int(completed)! <= Int(chapters)!{
-                            tasks.append(Task(name: name, description: description, chapters: Int(chapters)!, completed: Int(chapters)!, date: date))
+                        if let cmplted = Int(completed), let chpt = Int(chapters){
+                            if cmplted <= chpt{
+                            tasks.append(Task(name: name, description: description, chapters: chpt, completed: cmplted, date: date))
                         presentationMode.wrappedValue.dismiss()
+                            }else{
+                                showAlert = true
+                            }
                         }else{
                             showAlert = true
                         }
@@ -43,7 +47,7 @@ struct AddTaskView: View {
             }.navigationTitle("New Task")
                 .alert(isPresented: $showAlert){
                     Alert(title: Text("Error"),
-                          message: Text("Invalid input! Please check again."),
+                          message: Text("Invalid input! Please check that all fields are filled with the correct data."),
                           primaryButton: .default(Text("Dismiss")),
                           secondaryButton: .destructive(Text("Discard")){
                         presentationMode.wrappedValue.dismiss()
