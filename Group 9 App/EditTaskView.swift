@@ -40,9 +40,13 @@ struct EditTaskView: View {
                     }
                     Section{
                         Button{
-                            if Int(completedChapters)! <= Int(totalChapters)!{
-                                task = Task(name: name, description: description, chapters: Int(totalChapters)!, completed: Int(completedChapters)!, date: date)
-                                presentationMode.wrappedValue.dismiss()
+                            if let cmplted = Int(completedChapters), let chpt = Int(totalChapters){
+                                if cmplted <= chpt{
+                                    task = Task(name: name, description: description, chapters: chpt, completed: cmplted, date: date)
+                                    presentationMode.wrappedValue.dismiss()
+                                }else{
+                                    showErrorAlert = true
+                                }
                             }else{
                                 showErrorAlert = true
                             }
@@ -57,6 +61,14 @@ struct EditTaskView: View {
                         }
                     }
                 }.navigationTitle(Text("Edit Task"))
+                    .alert(isPresented: $showErrorAlert){
+                        Alert(title: Text("Error"),
+                              message: Text("Invalid input! Please check that all fields are filled with the correct data."),
+                              primaryButton: .default(Text("Dismiss")),
+                              secondaryButton: .destructive(Text("Discard")){
+                            presentationMode.wrappedValue.dismiss()
+                        })
+                    }
             }
         }.onAppear(){
             newTask = task
