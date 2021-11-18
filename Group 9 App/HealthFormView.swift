@@ -66,7 +66,7 @@ struct HealthFormView: View {
                         }
                         
                     }
-                    Section(footer: Text("Questions based on the Percieved Stress Scale by Sheldon Cohen. This is not a medical assesment, just a rought scale, see a psychologist if you are feeling mentally unwell.")){
+                    Section(footer: Text("Questions based on the Percieved Stress Scale by Sheldon Cohen. This is not a medical assesment, just a rough scale, see a psychologist if you are feeling mentally unwell.")){
                         Button{
                             if let q1 = Int(Q1), let q2 = Int(Q2), let q3 = Int(Q3), let q4 = Int(Q4), let q5 = Int(Q5){
                                 total = q1 + q2 + q3 + q4 + q5
