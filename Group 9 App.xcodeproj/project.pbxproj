@@ -24,6 +24,7 @@
 		C50996E32743556900654F92 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50996E22743556900654F92 /* EditTaskView.swift */; };
 		C50996E527436B2300654F92 /* AddGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50996E427436B2300654F92 /* AddGoalView.swift */; };
 		C5BE5D282745DEEA0092CD2A /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BE5D272745DEEA0092CD2A /* TaskData.swift */; };
+		C5BE5D2A2745E7C50092CD2A /* GoalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BE5D292745E7C50092CD2A /* GoalData.swift */; };
 		C5F856672744AB04003F9F36 /* QuoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F856662744AB04003F9F36 /* QuoteManager.swift */; };
 		C5F856692744AC61003F9F36 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F856682744AC61003F9F36 /* Quote.swift */; };
 		C5F8566B2744AD2B003F9F36 /* QuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F8566A2744AD2B003F9F36 /* QuotesView.swift */; };
@@ -47,6 +48,7 @@
 		C50996E22743556900654F92 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
 		C50996E427436B2300654F92 /* AddGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalView.swift; sourceTree = "<group>"; };
 		C5BE5D272745DEEA0092CD2A /* TaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
+		C5BE5D292745E7C50092CD2A /* GoalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalData.swift; sourceTree = "<group>"; };
 		C5F856662744AB04003F9F36 /* QuoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteManager.swift; sourceTree = "<group>"; };
 		C5F856682744AC61003F9F36 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		C5F8566A2744AD2B003F9F36 /* QuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				4676FAFE2741FE870014BDC5 /* TaskView.swift */,
 				4676FB042741FFB90014BDC5 /* TaskDetailView.swift */,
 				4676FB002741FF1B0014BDC5 /* AddTaskView.swift */,
+				C5BE5D292745E7C50092CD2A /* GoalData.swift */,
 				C5BE5D272745DEEA0092CD2A /* TaskData.swift */,
 				C50996E22743556900654F92 /* EditTaskView.swift */,
 				4676FAFC2741FD3F0014BDC5 /* Goal.swift */,
@@ -202,6 +205,7 @@
 				4676FAFB2741FCFC0014BDC5 /* Task.swift in Sources */,
 				C5BE5D282745DEEA0092CD2A /* TaskData.swift in Sources */,
 				4676FB012741FF1B0014BDC5 /* AddTaskView.swift in Sources */,
+				C5BE5D2A2745E7C50092CD2A /* GoalData.swift in Sources */,
 				4676FB032741FF4C0014BDC5 /* GoalsView.swift in Sources */,
 				4676FAFF2741FE870014BDC5 /* TaskView.swift in Sources */,
 				C5F856692744AC61003F9F36 /* Quote.swift in Sources */,

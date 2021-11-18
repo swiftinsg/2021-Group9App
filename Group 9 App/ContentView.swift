@@ -3,7 +3,7 @@ import SwiftUI
 struct ContentView: View {
     
     @Binding var tasks: [Task]
-    
+    @Binding var goals: [Goal]
     var body: some View {
         TabView{
             TasksView(tasks: $tasks)
@@ -11,7 +11,7 @@ struct ContentView: View {
                     Image(systemName: "list.bullet")
                     Text("Tasks")
                 }
-            GoalsView()
+            GoalsView(goals: $goals)
                 .tabItem {
                     Image(systemName: "moon.stars")
                     Text("Goals")
@@ -29,6 +29,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(tasks: .constant([]))
+        ContentView(tasks: .constant([]), goals: .constant([]))
     }
 }

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct GoalsView: View {
-    @State var goals = [Goal(name: "feed the cat", completed: false), Goal(name: "Feed dog", completed: true)]
+    @Binding var goals: [Goal]
     @State var showAddSheet = false
     var body: some View {
         NavigationView{
@@ -50,6 +50,6 @@ struct GoalsView: View {
 
 struct GoalsView_Previews: PreviewProvider {
     static var previews: some View {
-        GoalsView()
+        GoalsView(goals: .constant([]))
     }
 }
