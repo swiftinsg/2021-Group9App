@@ -53,7 +53,7 @@ struct TasksView: View {
                             overdueTasks.remove(atOffsets: indexSet)
                         }
                     }else{
-                        Text("Good work! you have nothing Overdue!")
+                        Text("Good work! You have nothing Overdue!")
                     }
                 }
                 Section(header: Text("Due Soon")){
