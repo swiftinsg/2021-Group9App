@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftUICharts
 
 struct TasksView: View {
     
@@ -6,6 +7,9 @@ struct TasksView: View {
     @Binding var tasks: [Task]
     @State var currentDate = Date()
     @State var showAddSheet = false
+    @State var totalChapters = 0
+    @State var totalCompleted = 0
+    
     func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()
         // customise how you want to format the date here
@@ -39,8 +43,14 @@ struct TasksView: View {
                                 }
                             }
                         }.onDelete { indexSet in
+                            let itemsToDelete = indexSet.map{
+                                overdueTasks[$0]
+                            }
+                            tasks.removeAll{
+                                itemsToDelete.contains($0)
+                            }
+                            print(itemsToDelete)
                             overdueTasks.remove(atOffsets: indexSet)
-                            tasks.remove(atOffsets: indexSet)
                         }
                     }else{
                         Text("Good work! you have nothing Overdue!")
@@ -62,11 +72,17 @@ struct TasksView: View {
                                 }
                             }
                         }.onDelete { indexSet in
-                            dueSoonTasks.remove(atOffsets: indexSet)
+                            let itemsToDelete = indexSet.map{
+                                dueSoonTasks[$0]
+                            }
+                            tasks.removeAll{
+                                itemsToDelete.contains($0)
+                            }
+                            print(itemsToDelete)
                             tasks.remove(atOffsets: indexSet)
                         }
                     }else{
-                        Text("Welcome! Get started by adding some tasks!")
+                        Text("Get started by adding some tasks!")
                     }
                 }
             }.listStyle(InsetGroupedListStyle())
