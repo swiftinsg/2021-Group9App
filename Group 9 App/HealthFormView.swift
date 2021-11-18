@@ -16,6 +16,7 @@ struct HealthFormView: View {
     @State var Q4 = ""
     @State var Q5 = ""
     @State var showErrorAlert = false
+    @State var total = 0
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView{
@@ -67,10 +68,10 @@ struct HealthFormView: View {
                     }
                     Section{
                         Button{
-                            do{
-                                let total = try Int(Q1)! + Int(Q2)! + Int(Q3)! + Int(Q4)! + Int(Q5)!
+                            if let q1 = Int(Q1), let q2 = Int(Q2), let q3 = Int(Q3), let q4 = Int(Q4), let q5 = Int(Q5){
+                                total = q1 + q2 + q3 + q4 + q5
                                 data.append(total)
-                            }catch{
+                            }else{
                                 showErrorAlert = true
                             }
                         }label:{
@@ -85,6 +86,14 @@ struct HealthFormView: View {
                     }
                 }
             }.navigationTitle(Text("Stress Form"))
+                .alert(isPresented: $showErrorAlert){
+                    Alert(title: Text("Error"),
+                          message: Text("Invalid input! Please fill in all fields."),
+                          primaryButton: .default(Text("Dismiss")),
+                          secondaryButton: .destructive(Text("Discard")){
+                        presentationMode.wrappedValue.dismiss()
+                    })
+                }
         }
     }
 }
