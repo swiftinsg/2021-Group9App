@@ -79,7 +79,7 @@ struct TasksView: View {
                                 itemsToDelete.contains($0)
                             }
                             print(itemsToDelete)
-                            tasks.remove(atOffsets: indexSet)
+                            dueSoonTasks.remove(atOffsets: indexSet)
                         }
                     }else{
                         Text("Get started by adding some tasks!")
