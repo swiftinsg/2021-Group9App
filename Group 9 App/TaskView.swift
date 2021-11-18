@@ -33,6 +33,8 @@ struct TasksView: View {
                                         Text(task.name)
                                             .bold()
                                         Text(formatDate(task.date))
+                                        ProgressView("Progress",value: CGFloat(task.completed), total: CGFloat(task.chapters))
+                                            .padding()
                                     }
                                 }
                             }
@@ -54,6 +56,8 @@ struct TasksView: View {
                                         Text(task.name)
                                             .bold()
                                         Text(formatDate(task.date))
+                                        ProgressView("Progress",value: CGFloat(task.completed), total: CGFloat(task.chapters))
+                                            .padding()
                                     }
                                 }
                             }

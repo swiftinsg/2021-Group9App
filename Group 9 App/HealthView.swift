@@ -9,6 +9,7 @@ struct HealthView: View {
     var body: some View {
         NavigationView{
             List{
+                Section{
                 Button{
                     showFormSheet = true
                 }label:{
@@ -27,11 +28,14 @@ struct HealthView: View {
                    Text("Study Tips")
                         .foregroundColor(Color(.systemPink))
                 }
-                LineChart()
-                    .data(stressData)
-                    .chartStyle(ChartStyle(backgroundColor: .white,
-                                           foregroundColor: ColorGradient(.blue, .purple)))
-                Text("                Overview of the Month")
+                }
+                Section{
+                    LineChart()
+                        .data(stressData)
+                        .chartStyle(ChartStyle(backgroundColor: .white,
+                                               foregroundColor: ColorGradient(.blue, .purple)))
+                    Text("                Overview of the Month")
+                }
             }.navigationTitle("Health")
         }.sheet(isPresented: $showQuoteSheet){
             QuotesView()
