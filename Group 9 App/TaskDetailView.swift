@@ -12,47 +12,37 @@ struct TaskDetailView: View {
     @State var showEditSheet = false
     
     var body: some View {
-        NavigationView{
-            ZStack(alignment:.topLeading){
-                Text(formatDate(task.date))
-                    .position(x: 65, y: 15)
-                ZStack{
-                    Circle()
-                        .stroke(lineWidth: 20)
-                        .opacity(0.3)
-                        .foregroundColor(.pink)
-                    
-                    Circle()
-                        .trim(from: 0, to: CGFloat(task.completed)/CGFloat(task.chapters))
-                        .stroke(style: .init(lineWidth: 20.0,
-                                             lineCap: .round,
-                                             lineJoin: .round))
-                        .foregroundColor(.pink)
-                        .rotationEffect(Angle(degrees: 270))
-                    let percentage = CGFloat(task.completed)/CGFloat(task.chapters)
-                    Text("\(Double(percentage*100), specifier: "%.2f")%")
-                    
-                }
-                .frame(width: 150, height: 150)
-                .position(x: 200, y: 160)
-                Text("\(task.completed) Out of \(task.chapters) Topics")
-                    .position(x: 200, y: 280)
-                Text("\(task.description)")
-                    .position(x: 200, y: 350)
-            }
-            
-            .navigationTitle(task.name)
-            .toolbar{
-                Button{
-                    showEditSheet = true
-                }label:{
-                    Text("Edit")
+        VStack{
+            let progress = CGFloat(task.completed)/CGFloat(task.chapters)
+            CircularProgressView(progress: progress, chapters: task.chapters, completed: task.completed)
+                .frame(width: 250, height: 250)
+                .padding()
+            VStack{
+            Text("\(task.completed) out of \(task.chapters) chapters completed")
+                if task.chapters == task.completed{
+                    Text("Great work!")
                 }
             }
-        }.accentColor(Color(.systemPink))
-            .sheet(isPresented: $showEditSheet){
-                EditTaskView(task: $task)
+                .padding()
+            Text("\(task.description)")
+                .padding()
+                .background(Color("customPink"))
+                .frame(width: 350)
+                .cornerRadius(15.0)
+            Spacer()
+        }
+        .navigationTitle(task.name)
+        .toolbar{
+            Button{
+                showEditSheet = true
+            }label:{
+                Text("Edit")
             }
+        }
+        .accentColor(Color(.systemPink))
+        .sheet(isPresented: $showEditSheet){
+            EditTaskView(task: $task)
+        }
     }
 }
 
