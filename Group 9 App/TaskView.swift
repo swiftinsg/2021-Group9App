@@ -42,9 +42,9 @@ struct TasksView: View {
         var dueSoonTasks = tasks.filter {
             Calendar.current.compare(Date.now, to: $0.date, toGranularity: .day) != .orderedDescending
         }
-        var totalChapters  = findTotalChapters(tasks)
-        var totalCompleted = findTotalComplete(tasks)
-        var percentage = findCompletion(a: totalCompleted, b: totalChapters)
+        let totalChapters  = findTotalChapters(tasks)
+        let totalCompleted = findTotalComplete(tasks)
+        let percentage = findCompletion(a: totalCompleted, b: totalChapters)
         NavigationView{
             List{
                 Section{
@@ -67,8 +67,7 @@ struct TasksView: View {
                                         Text(task.name)
                                             .bold()
                                         Text(formatDate(task.date))
-                                        ProgressView("Progress",value: CGFloat(task.completed), total: CGFloat(task.chapters))
-                                            .padding()
+                                        ProgressView("Progress: \(Double(findCompletion(a: CGFloat(task.completed), b: CGFloat(task.chapters))),specifier: "%.0f")%",value: CGFloat(task.completed), total: CGFloat(task.chapters))
                                     }
                                 }
                             }
@@ -96,8 +95,7 @@ struct TasksView: View {
                                         Text(task.name)
                                             .bold()
                                         Text(formatDate(task.date))
-                                        ProgressView("Progress",value: CGFloat(task.completed), total: CGFloat(task.chapters))
-                                            .padding()
+                                        ProgressView("Progress: \(Double(findCompletion(a: CGFloat(task.completed), b: CGFloat(task.chapters))),specifier: "%.0f")%",value: CGFloat(task.completed), total: CGFloat(task.chapters))
                                     }
                                 }
                             }
