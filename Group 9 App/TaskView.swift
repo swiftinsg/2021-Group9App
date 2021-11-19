@@ -21,7 +21,11 @@ struct TasksView: View {
         for item in list {
             totalChapters += item.chapters
         }
-        return CGFloat(totalChapters)
+        if totalChapters == 0{
+            return 1
+        }else{
+            return CGFloat(totalChapters)
+        }
     }
     func findTotalComplete(_ list: Array<Task>) -> CGFloat{
         var totalCompleted = 0
@@ -51,7 +55,11 @@ struct TasksView: View {
                     VStack(alignment: .leading){
                         Text("Overall Progress")
                             .bold()
-                        Text("\(Double(totalCompleted),specifier: "%.0f") completed of \(Double(totalChapters),specifier: "%.0f")")
+                        if tasks.count == 0 {
+                            Text("0 completed of 0")
+                        }else{
+                            Text("\(Double(totalCompleted),specifier: "%.0f") completed of \(Double(totalChapters),specifier: "%.0f")")
+                        }
                         Text("Completion: \(Double(percentage),specifier: "%.0f")%")
                         ProgressView(value: totalCompleted, total: totalChapters)
                         
