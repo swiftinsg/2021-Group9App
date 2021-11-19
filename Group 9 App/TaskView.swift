@@ -16,7 +16,24 @@ struct TasksView: View {
         formatter.dateStyle = .medium
         return formatter.string(from: date)
     }
-    
+    func findTotalChapters(_ list: Array<Task>) -> CGFloat{
+        var totalChapters = 0
+        for item in list {
+            totalChapters += item.chapters
+        }
+        return CGFloat(totalChapters)
+    }
+    func findTotalComplete(_ list: Array<Task>) -> CGFloat{
+        var totalCompleted = 0
+        for item in list{
+            totalCompleted += item.completed
+        }
+        return CGFloat(totalCompleted)
+    }
+    func findCompletion(a: CGFloat, b: CGFloat) -> CGFloat{
+        let percentage = (a/b)*100
+        return percentage
+    }
     
     var body: some View {
         var overdueTasks = tasks.filter {
@@ -25,8 +42,21 @@ struct TasksView: View {
         var dueSoonTasks = tasks.filter {
             Calendar.current.compare(Date.now, to: $0.date, toGranularity: .day) != .orderedDescending
         }
+        var totalChapters  = findTotalChapters(tasks)
+        var totalCompleted = findTotalComplete(tasks)
+        var percentage = findCompletion(a: totalCompleted, b: totalChapters)
         NavigationView{
             List{
+                Section{
+                    VStack(alignment: .leading){
+                        Text("Overall Progress")
+                            .bold()
+                        Text("\(Double(totalCompleted),specifier: "%.0f") completed of \(Double(totalChapters),specifier: "%.0f")")
+                        Text("Completion: \(Double(percentage),specifier: "%.0f")%")
+                        ProgressView(value: totalCompleted, total: totalChapters)
+                        
+                    }
+                }
                 Section(header: Text("Overdue")){
                     if overdueTasks.count != 0{
                         ForEach(overdueTasks){ task in
