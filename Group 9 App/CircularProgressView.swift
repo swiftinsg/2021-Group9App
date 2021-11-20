@@ -28,11 +28,17 @@ struct CircularProgressView: View {
                 .rotationEffect(Angle(degrees: 270))
             let percentage = (CGFloat(completed)/CGFloat(chapters))*100
             VStack{
-                Text("\(Double(percentage),specifier: "%.0f")%")
-                    .bold()
-                    .padding()
-                if chapters == completed{
-                    Text("Congrats!")
+                if chapters > 0{
+                    Text("\(Double(percentage),specifier: "%.0f")%")
+                        .bold()
+                        .padding()
+                    if chapters == completed{
+                        Text("Congrats!")
+                    }
+                }else{
+                    Text("0%")
+                        .bold()
+                        .padding()
                 }
             }
         }

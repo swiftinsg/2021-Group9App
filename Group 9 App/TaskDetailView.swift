@@ -20,7 +20,9 @@ struct TaskDetailView: View {
             VStack{
             Text("\(task.completed) out of \(task.chapters) chapters completed")
                 if task.chapters == task.completed{
+                    if task.chapters != 0{
                     Text("Great work!")
+                    }
                 }
             }
                 .padding()
