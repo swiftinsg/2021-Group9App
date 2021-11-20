@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HealthFormView: View {
-    let options = ["1","2","3","4"]
+    let options = ["0","1","2","3","4"]
     @Binding var data: Array<Double>
     @State private var Q1 = ""
     @State var Q2 = ""
@@ -24,7 +24,7 @@ struct HealthFormView: View {
                 Form{
                     Section(header: Text("Question 1")){
                         Text("How often have you felt upset because of something unexpected recently?")
-                        Picker("1 being the least 4 being the most", selection: $Q1){
+                        Picker("0 being the least 4 being the most", selection: $Q1){
                             ForEach(options, id: \.self){
                                 Text($0)
                             }
@@ -32,7 +32,7 @@ struct HealthFormView: View {
                     }
                     Section(header: Text("Question 2")){
                         Text("How often have you felt unable to control the important things in your life?")
-                        Picker("1 being the least 4 being the most", selection: $Q2){
+                        Picker("0 being the least 4 being the most", selection: $Q2){
                             ForEach(options, id: \.self){
                                 Text($0)
                             }
@@ -41,7 +41,7 @@ struct HealthFormView: View {
                     }
                     Section(header: Text("Question 3")){
                         Text("How often have you felt nervous and “stressed”?")
-                        Picker("1 being the least 4 being the most", selection: $Q3){
+                        Picker("0 being the least 4 being the most", selection: $Q3){
                             ForEach(options, id: \.self){
                                 Text($0)
                             }
@@ -49,8 +49,8 @@ struct HealthFormView: View {
                         
                     }
                     Section(header: Text("Question 4")){
-                        Text("How often have you felt confident about your ability to handle your personal problems?")
-                        Picker("1 being the least 4 being the most", selection: $Q4){
+                        Text("How often have you felt doubtful about your ability to handle your personal problems?")
+                        Picker("0 being the least 4 being the most", selection: $Q4){
                             ForEach(options, id: \.self){
                                 Text($0)
                             }
@@ -59,7 +59,7 @@ struct HealthFormView: View {
                     }
                     Section(header: Text("Question 5")){
                         Text("How often have you found that you could not cope with all the things that you had to do?")
-                        Picker("1 being the least 4 being the most", selection: $Q5){
+                        Picker("0 being the least 4 being the most", selection: $Q5){
                             ForEach(options, id: \.self){
                                 Text($0)
                             }
