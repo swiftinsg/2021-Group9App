@@ -18,14 +18,6 @@ struct HealthFormView: View {
     @State var showErrorAlert = false
     @State var total = 0
     @Environment(\.presentationMode) var presentationMode
-    var score: Int
-    var totalPoints: Int
-    @State var optionQ1 = 0
-    @State var optionQ2 = 0
-    @State var optionQ3 = 0
-    @State var optionQ4 = 0
-    @State var optionQ5 = 0
-    @State var totalScore = 0
     var body: some View {
         NavigationView{
             VStack{
@@ -105,51 +97,9 @@ struct HealthFormView: View {
                 }
         }
     }
-    func didTapOption(optionNumber: Int){
-        if optionNumber == 0{
-            optionQ1 += 0
-            optionQ2 += 0
-            optionQ3 += 0
-            optionQ4 += 0
-            optionQ5 += 0
-            totalScore += 0
-        }
-        if optionNumber == 1{
-            optionQ1 += 1
-            optionQ2 += 1
-            optionQ3 += 1
-            optionQ4 += 1
-            optionQ5 += 1
-            totalScore += 1
-        }
-        if optionNumber == 2{
-            optionQ1 += 2
-            optionQ2 += 2
-            optionQ3 += 2
-            optionQ4 += 2
-            optionQ5 += 2
-            totalScore += 2
-        }
-        if optionNumber == 3{
-            optionQ1 += 3
-            optionQ2 += 3
-            optionQ3 += 3
-            optionQ4 += 3
-            optionQ5 += 3
-            totalScore += 3
-        }
-        if optionNumber == 4{
-            optionQ1 += 4
-            optionQ2 += 4
-            optionQ3 += 4
-            optionQ4 += 4
-            optionQ5 += 4
-            totalScore += 4
-        }
-    }
 }
 struct HealthFormView_Previews: PreviewProvider {
     static var previews: some View {
-        HealthFormView(data: .constant([]), score: 3, totalPoints: 20)
+        HealthFormView(data: .constant([]))
     }
 }
