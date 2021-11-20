@@ -27,8 +27,8 @@ struct TaskDetailView: View {
             Text("\(task.description)")
                 .padding()
                 .background(Color("customPink"))
-                .frame(width: 350)
                 .cornerRadius(15.0)
+                .frame(width: 350)
             Spacer()
         }
         .navigationTitle(task.name)
