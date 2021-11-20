@@ -41,7 +41,7 @@ struct HealthView: View {
             QuotesView()
         }
         .sheet(isPresented: $showFormSheet){
-            HealthFormView(data: $stressData)
+            HealthFormView(data: $stressData, score: 3, totalPoints: 20)
         }
     }
     
