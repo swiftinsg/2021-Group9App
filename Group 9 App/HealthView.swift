@@ -34,6 +34,7 @@ struct HealthView: View {
                         .data(stressData)
                         .chartStyle(ChartStyle(backgroundColor: .white,
                                                foregroundColor: ColorGradient(.blue, .purple)))
+                        .frame(height: 300)
                     Text("                 Overview of the Week")
                 }
             }.navigationTitle("Health")
