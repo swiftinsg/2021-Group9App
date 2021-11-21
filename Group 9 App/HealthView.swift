@@ -35,6 +35,7 @@ struct HealthView: View {
                         .chartStyle(ChartStyle(backgroundColor: .white,
                                                foregroundColor: ColorGradient(.blue, .purple)))
                         .frame(height: 300)
+                        .padding()
                     Text("                 Overview of the Week")
                 }
             }.navigationTitle("Health")
