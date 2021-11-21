@@ -14,18 +14,63 @@ struct TaskDetailView: View {
     var body: some View {
         VStack{
             let progress = CGFloat(task.completed)/CGFloat(task.chapters)
-            CircularProgressView(progress: progress, chapters: task.chapters, completed: task.completed)
-                .frame(width: 250, height: 250)
-                .padding()
-            VStack{
-            Text("\(task.completed) out of \(task.chapters) chapters completed")
-                if task.chapters == task.completed{
-                    if task.chapters != 0{
-                    Text("Great work!")
+            ZStack{
+                Circle()
+                    .stroke(lineWidth: 20)
+                    .opacity(0.3)
+                    .foregroundColor(.pink)
+                
+                Circle()
+                    .trim(from: 0, to: progress)
+                    .stroke(style: .init(lineWidth: 20.0,
+                                         lineCap: .round,
+                                         lineJoin: .round))
+                    .foregroundColor(.pink)
+                    .rotationEffect(Angle(degrees: 270))
+                let percentage = (CGFloat(task.completed)/CGFloat(task.chapters))*100
+                VStack{
+                    if task.chapters > 0{
+                        Text("\(Double(percentage),specifier: "%.0f")%")
+                            .bold()
+                            .padding()
+                        if task.chapters == task.completed{
+                            Text("Congrats!")
+                        }
+                    }else{
+                        Text("0%")
+                            .bold()
+                            .padding()
                     }
                 }
             }
+            .frame(width: 250, height: 250)
+            .padding()
+            VStack{
+                Text("\(task.completed) out of \(task.chapters) chapters completed")
+                if task.chapters == task.completed{
+                    if task.chapters != 0{
+                        Text("Great work!")
+                    }
+                }
+            }
+            .padding()
+            HStack{
+                Button{
+                    if task.completed < task.chapters{
+                        task.completed += 1
+                    }
+                }label: {
+                    Text("+1 completed")
+                }
                 .padding()
+                Button{
+                    if task.completed > 0{
+                    task.completed -= 1
+                    }
+                }label:{
+                    Text("-1 completed")
+                }
+            }
             Text("\(task.description)")
                 .padding()
                 .background(Color("customPink"))
