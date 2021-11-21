@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftUICharts
 
 struct HealthView: View {
-    @State var stressData: [Double] = [8, 2, 4, 6, 12, 9, 2]
+    @State var stressData: [Double] = [5, 2, 4, 6, 12, 9, 2]
     @State var showFormSheet = false
     @State var showQuoteSheet = false
     @State var showTipsSheet = false
@@ -30,7 +30,7 @@ struct HealthView: View {
                 }
                 }
                 Section{
-                    LineChart()
+                    BarChart()
                         .data(stressData)
                         .chartStyle(ChartStyle(backgroundColor: .white,
                                                foregroundColor: ColorGradient(.blue, .purple)))
