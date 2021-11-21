@@ -36,7 +36,7 @@ struct HealthView: View {
                                                foregroundColor: ColorGradient(.blue, .purple)))
                         .frame(height: 300)
                         .padding()
-                    Text("                 Overview of the Week")
+                    Text("                 Recent Stress Levels")
                 }
             }.navigationTitle("Health")
         }.sheet(isPresented: $showQuoteSheet){
