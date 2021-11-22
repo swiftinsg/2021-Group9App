@@ -65,6 +65,7 @@ struct TasksView: View {
                             .animation(Animation.spring())
                         
                     }
+                    .padding(.vertical)
                 }
                 Section(header: Text("Overdue")){
                     if overdueTasks.count != 0{
@@ -100,6 +101,7 @@ struct TasksView: View {
                         Text("Good work! You have nothing Overdue!")
                     }
                 }
+                .padding(.vertical)
                 Section(header: Text("Due Soon")){
                     if dueSoonTasks.count != 0{
                         ForEach(dueSoonTasks){ task in
@@ -123,13 +125,13 @@ struct TasksView: View {
                                     let orangeRange = currentDate...currentDate.addingTimeInterval(172800)
                                     let yellowRange = currentDate...currentDate.addingTimeInterval(259200)
                                     if redRange.contains(task.date) {
-                                        Image(systemName: "square.fill")
+                                        Image(systemName: "circle.fill")
                                             .foregroundColor(.red)
                                     }else if orangeRange.contains(task.date){
-                                        Image(systemName: "square.fill")
+                                        Image(systemName: "circle.fill")
                                             .foregroundColor(.orange)
                                     }else if yellowRange.contains(task.date){
-                                        Image(systemName: "square.fill")
+                                        Image(systemName: "circle.fill")
                                             .foregroundColor(.yellow)
                                     }
                                     
@@ -150,6 +152,7 @@ struct TasksView: View {
                         Text("Get started by adding some tasks!")
                     }
                 }
+                .padding(.vertical)
             }.listStyle(InsetGroupedListStyle())
                 .navigationTitle("Tasks")
                 .navigationBarItems(leading: EditButton())
@@ -157,8 +160,7 @@ struct TasksView: View {
                     Button{
                         showAddSheet.toggle()
                     }label:{
-                        Text("+")
-                            .bold()
+                        Image(systemName: "plus")
                             .foregroundColor(Color("Watermelon"))
                         
                     }.sheet(isPresented: $showAddSheet){

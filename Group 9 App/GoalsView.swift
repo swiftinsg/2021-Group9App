@@ -39,9 +39,8 @@ struct GoalsView: View {
                     Button{
                         showAddSheet = true
                     }label:{
-                        Text("+")
+                        Image(systemName: "plus")
                             .foregroundColor(Color("Watermelon"))
-                            .bold()
                     }
                 }
                 .sheet(isPresented: $showAddSheet){
