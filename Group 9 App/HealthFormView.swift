@@ -22,13 +22,16 @@ struct HealthFormView: View {
         NavigationView{
             VStack{
                 Form{
+                    Section{
+                        Text("Answer the following questions, taking 0 as the least and 4 as the most.")
+                    }
                     Section(header: Text("Question 1")){
                         Text("How often have you felt upset because of something unexpected recently?")
                         Picker("0 being the least 4 being the most", selection: $Q1){
                             ForEach(options, id: \.self){
                                 Text($0)
                             }
-                        }
+                        }.pickerStyle(SegmentedPickerStyle())
                     }
                     Section(header: Text("Question 2")){
                         Text("How often have you felt unable to control the important things in your life?")
@@ -36,7 +39,7 @@ struct HealthFormView: View {
                             ForEach(options, id: \.self){
                                 Text($0)
                             }
-                        }
+                        }.pickerStyle(SegmentedPickerStyle())
                         
                     }
                     Section(header: Text("Question 3")){
@@ -45,7 +48,7 @@ struct HealthFormView: View {
                             ForEach(options, id: \.self){
                                 Text($0)
                             }
-                        }
+                        }.pickerStyle(SegmentedPickerStyle())
                         
                     }
                     Section(header: Text("Question 4")){
@@ -54,7 +57,7 @@ struct HealthFormView: View {
                             ForEach(options, id: \.self){
                                 Text($0)
                             }
-                        }
+                        }.pickerStyle(SegmentedPickerStyle())
                         
                     }
                     Section(header: Text("Question 5")){
@@ -63,7 +66,7 @@ struct HealthFormView: View {
                             ForEach(options, id: \.self){
                                 Text($0)
                             }
-                        }
+                        }.pickerStyle(SegmentedPickerStyle())
                         
                     }
                     Section(footer: Text("Questions based on the Percieved Stress Scale by Sheldon Cohen. This is not a medical assesment, just a rough scale, see a psychologist if you are feeling mentally unwell.")){

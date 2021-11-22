@@ -62,6 +62,7 @@ struct TasksView: View {
                         }
                         Text("Completion: \(Double(percentage),specifier: "%.0f")%")
                         ProgressView(value: totalCompleted, total: totalChapters)
+                            .animation(Animation.spring())
                         
                     }
                 }
@@ -77,8 +78,10 @@ struct TasksView: View {
                                         Text(formatDate(task.date))
                                         if task.chapters != 0{
                                             ProgressView("Progress: \(Double(findCompletion(a: CGFloat(task.completed), b: CGFloat(task.chapters))),specifier: "%.0f")%",value: CGFloat(task.completed), total: CGFloat(task.chapters))
+                                                .animation(Animation.spring())
                                         }else{
                                             ProgressView("Progress: 0%",value: 0, total: 1)
+                                                .animation(Animation.spring())
                                         }
                                     }
                                 }
@@ -109,8 +112,10 @@ struct TasksView: View {
                                         Text(formatDate(task.date))
                                         if task.chapters != 0{
                                         ProgressView("Progress: \(Double(findCompletion(a: CGFloat(task.completed), b: CGFloat(task.chapters))),specifier: "%.0f")%",value: CGFloat(task.completed), total: CGFloat(task.chapters))
+                                                .animation(Animation.spring())
                                         }else{
                                             ProgressView("Progress: 0%",value: 0, total: 1)
+                                                .animation(Animation.spring())
                                         }
                                     }
                                     Spacer()

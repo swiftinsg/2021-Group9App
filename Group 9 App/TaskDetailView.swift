@@ -31,6 +31,7 @@ struct TaskDetailView: View {
                                          lineJoin: .round))
                     .foregroundColor(Color("Watermelon"))
                     .rotationEffect(Angle(degrees: 270))
+                    .animation(Animation.spring())
                 let percentage = (CGFloat(task.completed)/CGFloat(task.chapters))*100
                 VStack{
                     if task.chapters > 0{
@@ -95,6 +96,7 @@ struct TaskDetailView: View {
                 .background(Color("customPink"))
                 .cornerRadius(15.0)
                 .frame(width: 350)
+                .padding()
             Spacer()
         }
         .navigationTitle(task.name)
