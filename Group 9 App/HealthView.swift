@@ -10,33 +10,34 @@ struct HealthView: View {
         NavigationView{
             List{
                 Section{
-                Button{
-                    showFormSheet = true
-                }label:{
-                    Text("Health Form")
-                        .foregroundColor(Color(.systemPink))
-                }
-                Button{
-                    showQuoteSheet = true
-                }label:{
-                    Text("Motivational Quote!")
-                        .foregroundColor(Color(.systemPink))
-                }
-                Button{
-                    showTipsSheet = true
-                }label:{
-                   Text("Study Tips")
-                        .foregroundColor(Color(.systemPink))
-                }
-                }
-                Section{
                     BarChart()
                         .data(stressData)
                         .chartStyle(ChartStyle(backgroundColor: .white,
                                                foregroundColor: ColorGradient(.pink, .red)))
                         .frame(height: 300)
                         .padding()
-                    Text("                 Recent Stress Levels")
+                    Text("Recent Stress Levels")
+                        .multilineTextAlignment(.center)
+                }
+                Section{
+                    Button{
+                        showFormSheet = true
+                    }label:{
+                        Text("Health Form")
+                            .foregroundColor(Color(.systemPink))
+                    }
+                    Button{
+                        showQuoteSheet = true
+                    }label:{
+                        Text("Motivational Quote!")
+                            .foregroundColor(Color(.systemPink))
+                    }
+                    Button{
+                        showTipsSheet = true
+                    }label:{
+                       Text("Study Tips")
+                            .foregroundColor(Color(.systemPink))
+                    }
                 }
             }.navigationTitle("Health")
         }.sheet(isPresented: $showQuoteSheet){
