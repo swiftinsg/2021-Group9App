@@ -154,13 +154,13 @@ struct TasksView: View {
                     }label:{
                         Text("+")
                             .bold()
-                            .foregroundColor(Color(.systemPink))
+                            .foregroundColor(Color("Watermelon"))
                         
                     }.sheet(isPresented: $showAddSheet){
                         AddTaskView(tasks: $tasks)
                     }
                 }
-        }.accentColor(Color(.systemPink))
+        }.accentColor(Color("Watermelon"))
     }
 }
 

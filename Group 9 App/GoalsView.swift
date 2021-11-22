@@ -22,7 +22,7 @@ struct GoalsView: View {
                             Spacer()
                             ZStack{
                                 Image(systemName: goal.completed ? "checkmark.square.fill":"square")
-                                    .foregroundColor(Color(.systemPink))
+                                    .foregroundColor(Color("Watermelon"))
                             }
                         }
                     }
@@ -40,14 +40,14 @@ struct GoalsView: View {
                         showAddSheet = true
                     }label:{
                         Text("+")
-                            .foregroundColor(Color(.systemPink))
+                            .foregroundColor(Color("Watermelon"))
                             .bold()
                     }
                 }
                 .sheet(isPresented: $showAddSheet){
                     AddGoalView(goals: $goals)
                 }
-        }.accentColor(Color(.systemPink))
+        }.accentColor(Color("Watermelon"))
     }
 }
 

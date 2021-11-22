@@ -13,7 +13,7 @@ struct HealthView: View {
                     BarChart()
                         .data(stressData)
                         .chartStyle(ChartStyle(backgroundColor: .white,
-                                               foregroundColor: ColorGradient(.pink, .red)))
+                                               foregroundColor: ColorGradient(Color("customPink"), .pink)))
                         .frame(height: 300)
                         .padding()
                     Text("Recent Stress Levels")
@@ -24,19 +24,19 @@ struct HealthView: View {
                         showFormSheet = true
                     }label:{
                         Text("Health Form")
-                            .foregroundColor(Color(.systemPink))
+                            .foregroundColor(Color("Watermelon"))
                     }
                     Button{
                         showQuoteSheet = true
                     }label:{
                         Text("Motivational Quote!")
-                            .foregroundColor(Color(.systemPink))
+                            .foregroundColor(Color("Watermelon"))
                     }
                     Button{
                         showTipsSheet = true
                     }label:{
                        Text("Study Tips")
-                            .foregroundColor(Color(.systemPink))
+                            .foregroundColor(Color("Watermelon"))
                     }
                 }
             }.navigationTitle("Health")

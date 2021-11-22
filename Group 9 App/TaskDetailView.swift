@@ -61,7 +61,9 @@ struct TaskDetailView: View {
             HStack{
                 Button{
                     if task.completed < task.chapters{
-                        task.completed += 1
+                        withAnimation{
+                            task.completed += 1
+                        }
                     }
                 }label: {
                     Text("+1 completed")
@@ -69,7 +71,9 @@ struct TaskDetailView: View {
                 .padding()
                 Button{
                     if task.completed > 0{
-                    task.completed -= 1
+                        withAnimation{
+                            task.completed -= 1
+                        }
                     }
                 }label:{
                     Text("-1 completed")

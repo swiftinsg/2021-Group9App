@@ -23,7 +23,6 @@
 		AA762449273E984A00E75145 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA762448273E984A00E75145 /* Preview Assets.xcassets */; };
 		C50996E32743556900654F92 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50996E22743556900654F92 /* EditTaskView.swift */; };
 		C50996E527436B2300654F92 /* AddGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50996E427436B2300654F92 /* AddGoalView.swift */; };
-		C50F49022747325D00B229F7 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50F49012747325D00B229F7 /* CircularProgressView.swift */; };
 		C5BE5D282745DEEA0092CD2A /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BE5D272745DEEA0092CD2A /* TaskData.swift */; };
 		C5BE5D2A2745E7C50092CD2A /* GoalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BE5D292745E7C50092CD2A /* GoalData.swift */; };
 		C5EAAAC0274B3817006BC1CA /* StressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EAAABF274B3817006BC1CA /* StressData.swift */; };
@@ -50,7 +49,6 @@
 		AA762448273E984A00E75145 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C50996E22743556900654F92 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
 		C50996E427436B2300654F92 /* AddGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalView.swift; sourceTree = "<group>"; };
-		C50F49012747325D00B229F7 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		C5BE5D272745DEEA0092CD2A /* TaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
 		C5BE5D292745E7C50092CD2A /* GoalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalData.swift; sourceTree = "<group>"; };
 		C5EAAABF274B3817006BC1CA /* StressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StressData.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 				4676FAFA2741FCFC0014BDC5 /* Task.swift */,
 				4676FAFE2741FE870014BDC5 /* TaskView.swift */,
 				4676FB042741FFB90014BDC5 /* TaskDetailView.swift */,
-				C50F49012747325D00B229F7 /* CircularProgressView.swift */,
 				4676FB002741FF1B0014BDC5 /* AddTaskView.swift */,
 				C5BE5D272745DEEA0092CD2A /* TaskData.swift */,
 				C5EAAABF274B3817006BC1CA /* StressData.swift */,
@@ -204,7 +201,6 @@
 			files = (
 				C5F856672744AB04003F9F36 /* QuoteManager.swift in Sources */,
 				AA3358BF274499A100F66BC8 /* HealthView.swift in Sources */,
-				C50F49022747325D00B229F7 /* CircularProgressView.swift in Sources */,
 				AA3358BD2744998D00F66BC8 /* Health.swift in Sources */,
 				C50996E32743556900654F92 /* EditTaskView.swift in Sources */,
 				C5EAAAC0274B3817006BC1CA /* StressData.swift in Sources */,
