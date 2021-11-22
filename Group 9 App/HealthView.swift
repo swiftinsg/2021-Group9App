@@ -45,6 +45,9 @@ struct HealthView: View {
         .sheet(isPresented: $showFormSheet){
             HealthFormView(data: $stressData)
         }
+        .sheet(isPresented: $showTipsSheet){
+            TipsView()
+        }
     }
     
     struct HealthView_Previews: PreviewProvider {
