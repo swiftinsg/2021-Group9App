@@ -23,7 +23,7 @@ struct TaskDetailView: View {
                     .stroke(lineWidth: 20)
                     .opacity(0.3)
                     .foregroundColor(Color("Watermelon"))
-                
+                    .animation(.spring())
                 Circle()
                     .trim(from: 0, to: progress)
                     .stroke(style: .init(lineWidth: 20.0,
@@ -31,12 +31,14 @@ struct TaskDetailView: View {
                                          lineJoin: .round))
                     .foregroundColor(Color("Watermelon"))
                     .rotationEffect(Angle(degrees: 270))
+                    .animation(.spring())
                 let percentage = (CGFloat(task.completed)/CGFloat(task.chapters))*100
                 VStack{
                     if task.chapters > 0{
                         Text("\(Double(percentage),specifier: "%.0f")%")
                             .bold()
                             .padding()
+                            .animation(.spring())
                         if task.chapters == task.completed{
                             Text("Congrats!")
                         }
