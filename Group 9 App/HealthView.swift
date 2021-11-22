@@ -33,7 +33,7 @@ struct HealthView: View {
                     BarChart()
                         .data(stressData)
                         .chartStyle(ChartStyle(backgroundColor: .white,
-                                               foregroundColor: ColorGradient(.blue, .purple)))
+                                               foregroundColor: ColorGradient(.pink, .red)))
                         .frame(height: 300)
                         .padding()
                     Text("                 Recent Stress Levels")

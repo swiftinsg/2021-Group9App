@@ -12,9 +12,15 @@ struct QuotesView: View {
     @ObservedObject var quoteManager = QuoteManager()
     
     var body: some View {
-        VStack{
+        VStack(alignment: .center){
+            Text("Quote! ✍️")
+                .bold()
+                .padding()
+                .frame(width: 150, height: 50)
+            
             if let quote = quoteManager.quote{
                 Text(quote.text)
+                    .multilineTextAlignment(.center)
                     .padding()
             }else{
                 ProgressView()
