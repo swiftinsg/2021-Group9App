@@ -31,7 +31,6 @@ struct TaskDetailView: View {
                                          lineJoin: .round))
                     .foregroundColor(Color("Watermelon"))
                     .rotationEffect(Angle(degrees: 270))
-                    .animation(Animation.spring())
                 let percentage = (CGFloat(task.completed)/CGFloat(task.chapters))*100
                 VStack{
                     if task.chapters > 0{
