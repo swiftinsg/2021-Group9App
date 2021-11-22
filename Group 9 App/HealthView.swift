@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftUICharts
 
 struct HealthView: View {
-    @State var stressData: [Double] = [5, 2, 4, 6, 12, 9, 2]
+    @Binding var stressData: [Double]
     @State var showFormSheet = false
     @State var showQuoteSheet = false
     @State var showTipsSheet = false
@@ -49,7 +49,7 @@ struct HealthView: View {
     
     struct HealthView_Previews: PreviewProvider {
         static var previews: some View {
-            HealthView()
+            HealthView(stressData: .constant([0.00,15.00,17.00,14.00,24.00,6.00,18.00]))
         }
     }
 }

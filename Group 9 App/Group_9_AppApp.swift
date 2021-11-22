@@ -12,19 +12,23 @@ struct Group_9_AppApp: App {
     
     @ObservedObject var taskData = TaskData()
     @ObservedObject var goalData = GoalData()
+    @ObservedObject var stressData = StressData()
+    
     @Environment(\.scenePhase) var scenePhase
     
     var body: some Scene {
         WindowGroup {
-            ContentView(tasks: $taskData.tasks, goals: $goalData.goals)
+            ContentView(tasks: $taskData.tasks, goals: $goalData.goals, stress: $stressData.stress)
                 .onAppear {
                     taskData.load()
                     goalData.load()
+                    stressData.load()
                 }
                 .onChange(of: scenePhase) { phase in
                     if phase == .inactive {
                         taskData.save()
                         goalData.save()
+                        stressData.save()
                     }
                 }
         }

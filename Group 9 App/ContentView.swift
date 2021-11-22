@@ -4,6 +4,7 @@ struct ContentView: View {
     
     @Binding var tasks: [Task]
     @Binding var goals: [Goal]
+    @Binding var stress: [Double]
     var body: some View {
         TabView{
             TasksView(tasks: $tasks)
@@ -17,7 +18,7 @@ struct ContentView: View {
                     Text("Goals")
                     
                 }
-            HealthView()
+            HealthView(stressData: $stress)
                 .tabItem {
                     Image(systemName: "heart.circle")
                     Text("Health")
@@ -29,6 +30,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(tasks: .constant([]), goals: .constant([]))
+        ContentView(tasks: .constant([]), goals: .constant([]), stress: .constant([]))
     }
 }
