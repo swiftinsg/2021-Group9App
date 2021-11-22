@@ -6,6 +6,9 @@ struct GoalsView: View {
     var body: some View {
         NavigationView{
             List {
+                if goals.count == 0{
+                    Text("Get started by adding some goals using the + button!")
+                }
                 ForEach(goals){ goal in
                     Button{
                         let goalIndex = goals.firstIndex(of: goal)!
