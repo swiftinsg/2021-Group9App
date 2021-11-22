@@ -71,6 +71,9 @@ struct HealthFormView: View {
                             if let q1 = Int(Q1), let q2 = Int(Q2), let q3 = Int(Q3), let q4 = Int(Q4), let q5 = Int(Q5){
                                 total = q1 + q2 + q3 + q4 + q5
                                 data.append(Double(total))
+                                if data.count >= 7 {
+                                    data.remove(at: 0)
+                                }
                                 presentationMode.wrappedValue.dismiss()
                             }else{
                                 showErrorAlert = true
