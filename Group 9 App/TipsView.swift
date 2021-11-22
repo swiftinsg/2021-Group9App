@@ -52,7 +52,7 @@ struct TipsView: View {
                     .foregroundColor(.white)
                     .cornerRadius(15)
             }
-            .background(Color(.systemPink))
+            .background(Color("Watermelon"))
             .frame(width: 110, height: 50)
             .cornerRadius(10)
         }.onAppear(){

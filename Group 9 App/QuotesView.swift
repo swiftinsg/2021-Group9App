@@ -34,7 +34,7 @@ struct QuotesView: View {
                     .foregroundColor(.white)
                 
             }.padding()
-                .background(Color.pink)
+                .background(Color("Watermelon"))
                 .cornerRadius(10.0)
         }.onAppear(){
             quoteManager.getQuote()

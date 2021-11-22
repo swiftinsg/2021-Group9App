@@ -16,14 +16,21 @@ struct HealthView: View {
                                                foregroundColor: ColorGradient(Color("customPink"), .pink)))
                         .frame(height: 300)
                         .padding()
-                    Text("                  Recent Stress Levels")
-                        .multilineTextAlignment(.center)
+                    VStack{
+                        HStack{
+                            Spacer()
+                            Text("Recent stress levels")
+                            Spacer()
+                        }
+                        Text("Based on input from stress form")
+                            
+                    }
                 }
                 Section{
                     Button{
                         showFormSheet = true
                     }label:{
-                        Text("Health Form")
+                        Text("Stress Form")
                             .foregroundColor(Color("Watermelon"))
                     }
                     Button{
@@ -35,7 +42,7 @@ struct HealthView: View {
                     Button{
                         showTipsSheet = true
                     }label:{
-                       Text("Study Tips")
+                        Text("Study Tips")
                             .foregroundColor(Color("Watermelon"))
                     }
                 }
