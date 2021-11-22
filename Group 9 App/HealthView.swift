@@ -10,12 +10,6 @@ struct HealthView: View {
         NavigationView{
             List{
                 Section{
-                    BarChart()
-                        .data(stressData)
-                        .chartStyle(ChartStyle(backgroundColor: .white,
-                                               foregroundColor: ColorGradient(Color("customPink"), .pink)))
-                        .frame(height: 300)
-                        .padding()
                     VStack{
                         HStack{
                             Spacer()
@@ -25,6 +19,12 @@ struct HealthView: View {
                         Text("Based on input from stress form")
                             
                     }
+                    BarChart()
+                        .data(stressData)
+                        .chartStyle(ChartStyle(backgroundColor: .white,
+                                               foregroundColor: ColorGradient(Color("customPink"), .pink)))
+                        .frame(height: 300)
+                        .padding()
                 }
                 Section{
                     Button{
