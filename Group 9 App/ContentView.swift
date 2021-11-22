@@ -22,9 +22,8 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "heart.circle")
                     Text("Health")
-                    
                 }
-        }
+        }.accentColor(.pink)
     }
 }
 
