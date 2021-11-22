@@ -113,6 +113,22 @@ struct TasksView: View {
                                             ProgressView("Progress: 0%",value: 0, total: 1)
                                         }
                                     }
+                                    Spacer()
+                                    let redRange = currentDate...currentDate.addingTimeInterval(86400)
+                                    let orangeRange = currentDate...currentDate.addingTimeInterval(172800)
+                                    let yellowRange = currentDate...currentDate.addingTimeInterval(259200)
+                                    if redRange.contains(task.date) {
+                                        Image(systemName: "square.fill")
+                                            .foregroundColor(.red)
+                                    }else if orangeRange.contains(task.date){
+                                        Image(systemName: "square.fill")
+                                            .foregroundColor(.orange)
+                                    }else if yellowRange.contains(task.date){
+                                        Image(systemName: "square.fill")
+                                            .foregroundColor(.yellow)
+                                    }
+                                    
+                
                                 }
                             }
                         }.onDelete { indexSet in

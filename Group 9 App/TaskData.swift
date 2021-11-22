@@ -11,9 +11,7 @@ import SwiftUI
 class TaskData: ObservableObject {
     @Published var tasks: [Task] = []
     
-    let sampleTasks = [Task(name: "sample task!", description: "Create your own task by pressing the + button on the tasks screen", chapters: 5, completed: 0, date: Date()),
-                       Task(name: "Swift accel", description: "aaaaah we are behind", chapters: 5, completed: 2, date: Date().addingTimeInterval(86400)),
-                       Task(name: "Thing", description: "very thing", chapters: 5, completed: 3, date: Date())]
+    let sampleTasks = [] as Array<Task>
     
     func getArchiveURL() -> URL {
         let plistName = "tasks.plist"
