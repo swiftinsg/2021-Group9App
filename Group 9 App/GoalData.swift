@@ -11,7 +11,7 @@ import SwiftUI
 class GoalData: ObservableObject {
     @Published var goals: [Goal] = []
     
-    let sampleGoals = [Goal(name: "Create your own Goals!", completed: false)]
+    let sampleGoals = [] as Array<Goal>
     
     func getArchiveURL() -> URL {
         let plistName = "goals.plist"
