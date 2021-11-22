@@ -16,7 +16,7 @@ struct HealthView: View {
                                                foregroundColor: ColorGradient(Color("customPink"), .pink)))
                         .frame(height: 300)
                         .padding()
-                    Text("Recent Stress Levels")
+                    Text("                  Recent Stress Levels")
                         .multilineTextAlignment(.center)
                 }
                 Section{
