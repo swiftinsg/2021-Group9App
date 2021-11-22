@@ -13,6 +13,10 @@ struct TaskDetailView: View {
     
     var body: some View {
         VStack{
+            VStack(alignment: .leading){
+                Text(formatDate(task.date))
+                    .frame(width: 350, alignment: .leading)
+            }
             let progress = CGFloat(task.completed)/CGFloat(task.chapters)
             ZStack{
                 Circle()
