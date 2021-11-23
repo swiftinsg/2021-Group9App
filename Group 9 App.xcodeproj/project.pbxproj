@@ -42,7 +42,7 @@
 		AA2C5FF12744D833005D5A19 /* HealthFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthFormView.swift; sourceTree = "<group>"; };
 		AA3358BC2744998D00F66BC8 /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
 		AA3358BE274499A100F66BC8 /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
-		AA76243E273E984900E75145 /* Group 9 App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Group 9 App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA76243E273E984900E75145 /* StudyZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA762441273E984900E75145 /* Group_9_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group_9_AppApp.swift; sourceTree = "<group>"; };
 		AA762443273E984900E75145 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA762445273E984A00E75145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		AA76243F273E984900E75145 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AA76243E273E984900E75145 /* Group 9 App.app */,
+				AA76243E273E984900E75145 /* StudyZone.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 				AA2C5FEF2744C4A5005D5A19 /* SwiftUICharts */,
 			);
 			productName = "Group 9 App";
-			productReference = AA76243E273E984900E75145 /* Group 9 App.app */;
+			productReference = AA76243E273E984900E75145 /* StudyZone.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -362,11 +362,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "sg.tk.Group-9-App";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.StudyZone;
+				PRODUCT_NAME = StudyZone;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -391,11 +391,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "sg.tk.Group-9-App";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tk.StudyZone;
+				PRODUCT_NAME = StudyZone;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
